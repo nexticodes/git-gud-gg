@@ -18,6 +18,9 @@
                 <div class="result">
                    <h1><%= (m.win) ? 'W' : 'L' %></h1>
                 </div>
+                <form action="/matches/<%= m._id %>" method="GET">
+                    <input class="details-button" type="submit" value="DETAILS">
+                </form>
             </div>
         <% }) %>
     <%} %>
