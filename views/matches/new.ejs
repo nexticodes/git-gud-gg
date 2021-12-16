@@ -1,0 +1,177 @@
+<%- include('../partials/header') %>
+
+
+    <div class="content-container">
+        <h1>Add A Match</h1>
+        <form action='/matches' method="POST">
+            <h3>Character</h3>
+            <div class="char-container">
+                <div class="char-list">
+                    <label for="bangalore">
+                        <input name="character" type="radio" value="Bangalore">
+                        Bangalore
+                    </label>
+                    <label for="bloodhound">
+                        <input name="character" type="radio" value="Bloodhound">
+                        Bloodhound
+                    </label>
+                    <label for="Gibraltar">
+                        <input name="character" type="radio" value="Gibraltar">
+                        Gibraltar
+                    </label>
+                    <label for="Lifeline">
+                        <input name="character" type="radio" value="Lifeline">
+                        Lifeline
+                    </label>
+                    <label for="Pathfinder">
+                        <input name="character" type="radio" value="Pathfinder">
+                        Pathfinder
+                    </label>
+                </div>
+                <div class="char-list">
+                    <label for="Wraith">
+                        <input name="character" type="radio" value="Wraith">
+                        Wraith
+                    </label>
+                    <label for="Caustic">
+                        <input name="character" type="radio" value="Caustic">
+                        Caustic
+                    </label>
+                    <label for="Mirage">
+                        <input name="character" type="radio" value="Mirage">
+                        Mirage
+                    </label>
+                    <label for="Octane">
+                        <input name="character" type="radio" value="Octane">
+                        Octane
+                    </label>
+                    <label for="Wattson">
+                        <input name="character" type="radio" value="Wattson">
+                        Wattson
+                    </label>
+                </div>
+                <div class="char-list">
+                    <label for="Crypto">
+                        <input name="character" type="radio" value="Crypto">
+                        Crypto
+                    </label>
+                    <label for="Revenant">
+                        <input name="character" type="radio" value="Revenant">
+                        Revenant
+                    </label>
+                    <label for="Loba">
+                        <input name="character" type="radio" value="Loba">
+                        Loba
+                    </label>
+                    <label for="Rampart">
+                        <input name="character" type="radio" value="Rampart">
+                        Rampart
+                    </label>
+                    <label for="Horizon">
+                        <input name="character" type="radio" value="Horizon">
+                        Horizon
+                    </label>
+                </div>
+                <div class="char-list">
+                    <label for="Fuse">
+                        <input name="character" type="radio" value="Fuse">
+                        Fuse
+                    </label>
+                    <label for="Seer">
+                        <input name="character" type="radio" value="Seer">
+                        Seer
+                    </label>
+                    <label for="Ashe">
+                        <input name="character" type="radio" value="Ashe">
+                        Ashe
+                    </label>
+                </div>
+            </div>
+            <h3>Score</h3>
+            <div class="score-container">
+                <div>
+                    <label for="kills">
+                        Kills <input type="number" name="kills" min="0" max="60">
+                    </label>
+                    <label for="deaths">
+                        Death(s) <input type="number" name="deaths" min="0" max="10">
+                    </label>
+                </div>
+                <div>
+                    <label for="placement">
+                        Placement <input type="number" min="0" max="20" placeholder="/20">
+                    </label>
+                    <label for="win">
+                        Win?<input type="checkbox" name="win">
+                    </label>
+                </div>
+            </div>
+            <h3>Loadout</h3>
+            <div class="weapons-container">
+                <select name="weapon1" id="weapon1-select">
+                    <option value="">-- Weapon1 --</option>
+                    <option value="Bocek Compound Bow">Bocek Compound Bow</option>
+                    <option value="HAVOC">Havoc</option>
+                    <option value="Devotion">Devotion</option>
+                    <option value="L-Star">L-Star</option>
+                    <option value="Triple Take">Triple Take</option>
+                    <option value="Volt">Volt</option>
+                    <option value="VK-47 Flatline">VK-47 Flatline</option>
+                    <option value="Hemlok Burst AR">Hemlok Burst AR</option>
+                    <option value="Rampage">Rampage</option>
+                    <option value="30-30 Repeater">30-30 Repeater</option>
+                    <option value="Wingman">Wingman</option>
+                    <option value="Prowler Burst PDW">Prowler Burst PDW</option>
+                    <option value="C.A.R. SMG">C.A.R. SMG</option>
+                    <option value="R-301 Carbine">R-301 Carbine</option>
+                    <option value="R-99 SMG">R-99 SMG</option>
+                    <option value="RE-45">RE-45</option>
+                    <option value="P2020">P2020</option>
+                    <option value="EVA8 Auto">EVA8 Auto</option>
+                    <option value="Mastiff Shotgun">MastiffShotgun</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Peacekeeper">Peacekeeper</option>
+                    <option value="Charge Rifle">Charge Rifle</option>
+                    <option value="Longbow DMR">Longbow DMR</option>
+                    <option value="Sentinel">Sentinel</option>
+                    <option value="Spitfire">Spitfire</option>
+                    <option value="G7 Scout">G7 Scout</option>
+                    <option value="Alternator SMG">Alternator SMG</option>
+                    <option value="Kraber .50-Cal Sniper">Kraber .50-Cal Sniper</option>
+                </select>
+                <select name="weapon2" id="weapon2-select">
+                    <option value="">-- Weapon2 --</option>
+                    <option value="Bocek Compound Bow">Bocek Compound Bow</option>
+                    <option value="HAVOC">Havoc</option>
+                    <option value="Devotion">Devotion</option>
+                    <option value="L-Star">L-Star</option>
+                    <option value="Triple Take">Triple Take</option>
+                    <option value="Volt">Volt</option>
+                    <option value="VK-47 Flatline">VK-47 Flatline</option>
+                    <option value="Hemlok Burst AR">Hemlok Burst AR</option>
+                    <option value="Rampage">Rampage</option>
+                    <option value="30-30 Repeater">30-30 Repeater</option>
+                    <option value="Wingman">Wingman</option>
+                    <option value="Prowler Burst PDW">Prowler Burst PDW</option>
+                    <option value="C.A.R. SMG">C.A.R. SMG</option>
+                    <option value="R-301 Carbine">R-301 Carbine</option>
+                    <option value="R-99 SMG">R-99 SMG</option>
+                    <option value="RE-45">RE-45</option>
+                    <option value="P2020">P2020</option>
+                    <option value="EVA8 Auto">EVA8 Auto</option>
+                    <option value="Mastiff Shotgun">MastiffShotgun</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Peacekeeper">Peacekeeper</option>
+                    <option value="Charge Rifle">Charge Rifle</option>
+                    <option value="Longbow DMR">Longbow DMR</option>
+                    <option value="Sentinel">Sentinel</option>
+                    <option value="Spitfire">Spitfire</option>
+                    <option value="G7 Scout">G7 Scout</option>
+                    <option value="Alternator SMG">Alternator SMG</option>
+                    <option value="Kraber .50-Cal Sniper">Kraber .50-Cal Sniper</option>
+                </select>
+            </div>
+            <button type="submit">Add Match</button>
+        </form>
+    </div>
+    <%- include('../partials/footer') %>
