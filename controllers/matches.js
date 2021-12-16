@@ -1,5 +1,6 @@
 module.exports = {
-    create
+    create,
+    index,
 }
 
 const Match = require('./../models/match');
@@ -27,3 +28,9 @@ function create(req, res){
         });
     });
 };
+
+function index(req, res){
+    Match.find({}, (err, matches) => {
+        res.render('matches/index', {matches});
+    })
+}
