@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>
+            GitGud - helping gamers imrpove by bringing awareness to their gameplay.
+        </title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
 
-<head>
-    <title>
-        GitGud - helping gamers imrpove by bringing awareness to their gameplay.
-    </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-    <% if (user) { %>
-    <nav>
-        <img src="/images/camera.svg">
-        <a href="/logout">LOG OUT</a>
-    </nav>
-    <% } %>
+    <body>
+        <nav>
+            <img src="/images/camera.svg">
+            <h1>GitGud</h1>
+            <% if (user) { %>
+                <a href="/matches">ALL MATCHES</a>
+                <a href="/matches/new">ADD NEW MATCH</a>
+                <a href="/logout">LOG OUT</a>
+            <% } else { %>
+                <a href="/auth/google">LOG IN</a>
+            <% } %>
+        </nav>
