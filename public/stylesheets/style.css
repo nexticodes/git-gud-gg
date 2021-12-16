@@ -20,10 +20,57 @@ a {
 
 .content-container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
   height: 80%;
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form h3 {
+  margin: 20px auto 10px auto;
+}
+
+form button {
+  margin: 20px auto;
+}
+
+.char-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.char-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.score-container > div{
+  display: flex;
+  flex-direction: column;
+}
+
+.weapons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 footer {
