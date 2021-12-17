@@ -1,0 +1,26 @@
+<%- include('./../partials/header') %>
+
+<div class="content-container">
+    <div class="match-details">
+        <div class="avatar">
+            <h1><%= match.character %></h1>
+        </div>
+        <div class="scores">
+            <h2>Kills: <%= match.kills %></h2>
+            <h2>Deaths: <%= match.deaths %></h2>
+            <h2>K/D: <%= (match.kills / ((match.deaths === 0) ? 1 : match.deaths)).toFixed(2) %></h2>
+        </div>
+        <div class="result">
+           <h1><%= (match.win) ? 'W' : 'L' %></h1>
+        </div>
+    </div>
+    <div class="notes-container">
+        <h1>Notes</h1>
+        <hr>
+    </div>
+    <form action="/matches/:id/notes" method="POST">
+        <button class="add-sign" type="submit">+</button>
+    </form>
+</div>
+
+<%- include('./../partials/footer') %>
