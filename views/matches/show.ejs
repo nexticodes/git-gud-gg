@@ -36,6 +36,13 @@
                             <%= n.content %>
                         </p>
                     </div>
+                    <div class="note-poster">
+                        <img class="note-avatar" src="<%=n.postedBy.avatar%>">
+                        <div class="note-poster-detail">
+                            <p><%= (n.postedBy.name === user.name) ? 'You' : n.postedBy.name.split(' ')[0]%></p>
+                            <p>Posted <%= n.createdAt.toLocaleDateString() %></p>
+                        </div>
+                    </div>
                 </div>
             <% }); %>
 
