@@ -19,7 +19,7 @@
         <h1>Notes</h1>
         <hr>
         <% if (match.notes.length !== 0){ %>
-            match.notes.forEach(n => {
+            <% match.notes.forEach(n => { %>
                 <div class="note">
                     <div class="note-header">
                         <div class="category">
@@ -31,8 +31,13 @@
                             <h5><%= n.importance %></h5>
                         </div>
                     </div>
+                    <div class="note-content">
+                        <p id="content">
+                            <%= n.content %>
+                        </p>
+                    </div>
                 </div>
-            });
+            <% }); %>
 
         <%} else { %>
            <h4>You don't have any notes for this match yet!</h4>
