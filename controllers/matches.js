@@ -1,6 +1,8 @@
 module.exports = {
     create,
     index,
+    new: newMatch,
+    show
 }
 
 const Match = require('./../models/match');
@@ -33,4 +35,15 @@ function index(req, res){
     Match.find({}, (err, matches) => {
         res.render('matches/index', {matches});
     })
+};
+
+function newMatch(req, res) {
+    res.render('matches/new');
+};
+
+function show(req, res){
+    Match.findById(req.params.id, (err, match) => {
+        console.log(match);
+        res.render('matches/show', {match});
+    });
 }
