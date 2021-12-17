@@ -48,7 +48,6 @@ function show(req, res){
             path: 'postedBy',
         }
     }).exec((err, match) => {
-        console.log(match);
         res.render('matches/show', {match});
     });
 }
