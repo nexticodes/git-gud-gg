@@ -33,12 +33,12 @@ function create(req, res){
 
 function index(req, res){
     Match.find({}, (err, matches) => {
-        res.render('matches/index', {matches});
+        res.render('matches/index', {title: 'ALL MATCHES', matches});
     })
 };
 
 function newMatch(req, res) {
-    res.render('matches/new');
+    res.render('matches/new', {title: 'NEW MATCH'});
 };
 
 function show(req, res){

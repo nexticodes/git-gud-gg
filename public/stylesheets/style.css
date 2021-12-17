@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: white;
   text-decoration: none;
 }
 
@@ -21,9 +21,51 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 10%;
+  height: 50px;
   width: 100%;
-  padding: 3% 2%;
+  padding: 3% 0% 3% 0%;
+  background-color: rgb(34, 34, 36);
+  color: white;
+}
+
+.nav-item {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+}
+
+.nav-item:hover{
+  cursor: pointer;
+  animation: buttonHover 0.5s forwards;
+}
+
+@keyframes buttonHover {
+  70%{
+    background-color: rgb(13, 73, 240);
+  }
+  100%{
+    background-color: rgb(12, 66, 214);
+    text-shadow: 0px 0px 20px white;
+  }
+}
+
+.active {
+  background-color: rgb(12, 66, 214);
+  text-shadow: 0px 0px 20px white;
+}
+
+#filler {
+  flex-grow: 11;
+}
+
+nav .avatar{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin: 10px;
 }
 
 .login {
@@ -164,6 +206,7 @@ form button {
   border-radius: 50%;
   height: 75px;
   margin: 10px;
+  border: 1px solid black;
 }
 
 #add-note {
@@ -204,7 +247,8 @@ textarea[name="content"]{
 }
 
 .match-details {
-  margin-top: 10%;
+  margin: 30px auto;
+  height: 150px;
 }
 
 .notes-container {

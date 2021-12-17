@@ -9,13 +9,23 @@
 
     <body>
         <nav>
-            <img src="/images/camera.svg">
-            <h1>GitGud</h1>
+            <a class="nav-item" href="/">
+                <img src="/images/camera.svg">
+                <h1>GitGud</h1>
+            </a>
+            <div id="filler">
+            </div>
             <% if (user) { %>
-                <a href="/matches">ALL MATCHES</a>
-                <a href="/matches/new">ADD NEW MATCH</a>
-                <a href="/logout">LOG OUT</a>
+                 <a class="nav-item <%= title === 'ALL MATCHES' ? 'active' : '' %>" href="/matches">ALL MATCHES</a>
+                <a class="nav-item <%= title === 'NEW MATCH' ? 'active' : '' %>"href="/matches/new">NEW MATCH</a>
+
+                <div class="nav-item">
+                    <img class="avatar" src="<%=user.avatar%>">
+                    <h1>v</h1>
+                </div>
             <% } else { %>
-                <a href="/auth/google">LOG IN</a>
+                <div class="nav-item">
+                    <a href="/auth/google">LOG IN</a>
+                </div>
             <% } %>
         </nav>
