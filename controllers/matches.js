@@ -48,6 +48,7 @@ function show(req, res){
             path: 'postedBy',
         }
     }).exec((err, match) => {
-        res.render('matches/show', {match});
+        const isOwnUser = match.user._id.equals(res.locals.user._id)
+        res.render('matches/show', {title: '', match, isOwnUser});
     });
 }
