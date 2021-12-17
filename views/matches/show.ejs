@@ -1,6 +1,7 @@
 <%- include('./../partials/header') %>
 
 <div class="content-container">
+    <h1>Match Details</h1>
     <div class="match-details">
         <div class="avatar">
             <h1><%= match.character %></h1>
@@ -17,8 +18,29 @@
     <div class="notes-container">
         <h1>Notes</h1>
         <hr>
+        <% if (match.notes.length !== 0){ %>
+            match.notes.forEach(n => {
+                <div class="note">
+                    <div class="note-header">
+                        <div class="category">
+                            <h6>Category</h6>
+                            <h5><%= n.category %></h5>
+                        </div>
+                        <div class="importance">
+                            <h6>Priority</h6>
+                            <h5><%= n.importance %></h5>
+                        </div>
+                    </div>
+                </div>
+            });
+
+        <%} else { %>
+           <h4>You don't have any notes for this match yet!</h4>
+           <h5>Add a note by clicking the button below!</h5>
+           <% } %>
+        <hr>
     </div>
-    <form action="/matches/:id/notes" method="POST">
+    <form action="/matches/<%=match._id%>/notes/new" method="GET">
         <button class="add-sign" type="submit">+</button>
     </form>
 </div>
