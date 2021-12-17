@@ -10,8 +10,9 @@ router.get('/', matchesCtrl.index);
 router.post('/', matchesCtrl.create);
 
 /* GET matches form - NEW */
-router.get('/new', function(req, res) {
-  res.render('matches/new');
-});
+router.get('/new', matchesCtrl.new);
+
+/* GET matches/:id - show page */
+router.get('/:id', matchesCtrl.show);
 
 module.exports = router;
