@@ -1,0 +1,24 @@
+<%- include('./../partials/header') %>
+
+<div class="content-container">
+    <div class="content-header">
+        <h1>Add A Note</h1>
+        <hr>
+        <h6>Be really honest as you type out what happened during this match. Mistakes you've made, how you moved, did you communicate well?</h6>
+    </div>
+    <form action="/matches/<%=matchId%>/notes">
+        <label for="category">Category</label>
+        <select name="category">
+            <option value="">-- Select one --</option>
+            <option value="Positioning">Positioning</option>
+            <option value="Communication">Communication</option>
+            <option value="Mechanics">Mechanics</option>
+        </select>
+        <label for="importance">Priority (1 - most important)</label>
+        <input name="importance" max=5 min=1>
+        <textarea name="content" placeholder="Enter your notes here"></textarea>
+        <button type="submit">Add Note</button>
+    </form>
+</div>
+
+<%- include('./../partials/footer') %>
