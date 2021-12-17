@@ -114,11 +114,19 @@ form button {
   transform: rotate(90deg);
 }
 
+.note {
+  margin: 5% auto;
+}
+
 .note-header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 2% auto;
+  margin: 2% auto 0 auto;
+  border: 1px solid black;
+  border-bottom: 0;
+  width: 80%;
+  height: 50px;
 }
 
 .note-options {
@@ -136,9 +144,26 @@ form button {
 
 .note-content {
   width: 80%;
-  margin: 2% auto;
+  margin: 0 auto;
   border: 1px solid black;
   padding: 5%;
+}
+
+.note-poster {
+  border: 1px solid black;
+  border-top: 0px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 0px 0px 25px 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.note-avatar {
+  border-radius: 50%;
+  height: 75px;
+  margin: 10px;
 }
 
 #add-note {
