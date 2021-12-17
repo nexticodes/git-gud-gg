@@ -76,7 +76,7 @@ form button {
   background-color: #00B7FF;
 }
 
-.match-container {
+.match-container, .match-details {
   width: 90%;
   height: 80%;
   display: flex;
@@ -106,6 +106,24 @@ form button {
   margin: 0 0 0 15%;
   border: 1px solid black;
   text-align: center;
+}
+
+.match-details > .result {
+  width: 20%;
+  height: 70%;
+  margin: 0 4%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.match-details {
+  margin-top: 10%;
+}
+
+.notes-container {
+  align-items: center;
+  text-align: center;
+  width: 90%;
 }
 
 .add-sign {
