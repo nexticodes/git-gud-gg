@@ -1,45 +1,64 @@
 <%- include('./../partials/header') %>
 
-<div class="content-container">
-    <h1>Match Details</h1>
-    <div class="match-details">
-        <div class="avatar">
-            <h1><%= match.character %></h1>
+    <div class="content-container">
+        <h1>Match Details</h1>
+        <div class="match-details">
+            <div class="avatar">
+                <img>
+                <p>
+                    <%= match.character %>
+                </p>
+            </div>
+            <div class="scores">
+                <h2>Kills: <%= match.kills %>
+                </h2>
+                <h2>Deaths: <%= match.deaths %>
+                </h2>
+                <h2>K/D: <%= (match.kills / ((match.deaths===0) ? 1 : match.deaths)).toFixed(2) %>
+                </h2>
+            </div>
+            <div class="result">
+                <h1>
+                    <%= (match.win) ? 'W' : 'L' %>
+                </h1>
+            </div>
         </div>
-        <div class="scores">
-            <h2>Kills: <%= match.kills %></h2>
-            <h2>Deaths: <%= match.deaths %></h2>
-            <h2>K/D: <%= (match.kills / ((match.deaths === 0) ? 1 : match.deaths)).toFixed(2) %></h2>
-        </div>
-        <div class="result">
-           <h1><%= (match.win) ? 'W' : 'L' %></h1>
-        </div>
-    </div>
-    <div class="notes-container">
-        <h1>Notes</h1>
-        <hr>
-        <% if (match.notes.length !== 0){ %>
-            <% match.notes.forEach(n => { %>
-                <div class="note">
-                    <div class="note-header">
-                        <div class="category">
-                            <h6>Category</h6>
-                            <h5><%= n.category %></h5>
+        <% if (isOwnUser) {%>
+            <div class="options-container">
+                <button id="update-match-button" type="click">Update</button>
+                <button id="delete-match-button" type="click">Delete</button>
+            </div>
+        <% } %>
+        <div class="notes-container">
+            <h1>Notes</h1>
+            <hr>
+            <% if (match.notes.length !==0){ %>
+                <% match.notes.forEach(n=> { %>
+                    <div class="note">
+                        <div class="note-header">
+                            <div class="category">
+                                <h6>Category</h6>
+                                <h5>
+                                    <%= n.category %>
+                                </h5>
+                            </div>
+                            <div class="importance">
+                                <h6>Priority</h6>
+                                <h5>
+                                    <%= n.importance %>
+                                </h5>
+                            </div>
                         </div>
-                        <div class="importance">
-                            <h6>Priority</h6>
-                            <h5><%= n.importance %></h5>
+                        <div class="note-content">
+                            <p id="content">
+                                <%= n.content %>
+                            </p>
                         </div>
-                    </div>
-                    <div class="note-content">
-                        <p id="content">
-                            <%= n.content %>
-                        </p>
-                    </div>
-                    <div class="note-poster">
-                        <img class="note-avatar" src="<%=n.postedBy.avatar%>">
-                        <div class="note-poster-detail">
-                            <p><%= (n.postedBy.name === user.name) ? 'You' : n.postedBy.name.split(' ')[0]%></p>
+                        <div class="note-poster">
+                            <img class="note-avatar" src="<%=n.postedBy.avatar%>">
+                            <div class="note-poster-detail">
+                                <p>
+                                    <%= (n.postedBy.name===user.name) ? 'You' : n.postedBy.name.split(' ')[0]%></p>
                             <p>Posted <%= n.createdAt.toLocaleDateString() %></p>
                         </div>
                     </div>
@@ -47,10 +66,10 @@
             <% }); %>
 
         <%} else { %>
-           <h4>You don't have any notes for this match yet!</h4>
-           <h5>Add a note by clicking the button below!</h5>
-           <% } %>
-        <hr>
+           <h4>You don' t have any notes for this match yet!</h4>
+            <h5>Add a note by clicking the button below!</h5>
+            <% } %>
+            <hr>
     </div>
     <form action="/matches/<%=match._id%>/notes/new" method="GET">
         <button class="add-sign" type="submit">+</button>
