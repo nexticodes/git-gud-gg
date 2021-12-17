@@ -35,6 +35,10 @@ nav {
   margin: 0 auto;
 }
 
+.content-header {
+  text-align: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -87,6 +91,29 @@ form button {
 
 .match-container > form {
   transform: rotate(90deg);
+}
+
+.note-options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
+}
+
+.note-options > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+#add-note {
+  width: 80%;
+}
+
+textarea[name="content"]{
+  width: 90%;
+  height: 150px;
+  margin: 20px auto;
 }
 
 .avatar {
