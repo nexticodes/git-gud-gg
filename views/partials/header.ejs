@@ -16,8 +16,8 @@
             <div id="filler">
             </div>
             <% if (user) { %>
-                 <a class="nav-item <%= title === 'ALL MATCHES' ? 'active' : '' %>" href="/matches">ALL MATCHES</a>
-                <a class="nav-item <%= title === 'NEW MATCH' ? 'active' : '' %>"href="/matches/new">NEW MATCH</a>
+                 <a class="nav-item <%= (title === 'ALL MATCHES') ? 'active' : '' %>" href="/matches">ALL MATCHES</a>
+                <a class="nav-item <%= (title === 'NEW MATCH') ? 'active' : '' %>"href="/matches/new">NEW MATCH</a>
 
                 <div class="nav-item">
                     <img class="avatar" src="<%=user.avatar%>">
