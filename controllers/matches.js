@@ -42,8 +42,7 @@ function newMatch(req, res) {
 };
 
 function show(req, res){
-    Match.findById(req.params.id, (err, match) => {
-        console.log(match);
+    Match.findById(req.params.id).populate('notes').exec((err, match) => {
         res.render('matches/show', {match});
     });
 }
