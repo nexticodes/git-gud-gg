@@ -42,7 +42,13 @@ function newMatch(req, res) {
 };
 
 function show(req, res){
-    Match.findById(req.params.id).populate('notes').exec((err, match) => {
+    Match.findById(req.params.id).populate('notes').populate({
+        path: 'notes',
+        populate: {
+            path: 'postedBy',
+        }
+    }).exec((err, match) => {
+        console.log(match);
         res.render('matches/show', {match});
     });
 }
