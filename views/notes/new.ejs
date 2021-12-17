@@ -4,19 +4,26 @@
     <div class="content-header">
         <h1>Add A Note</h1>
         <hr>
-        <h6>Be really honest as you type out what happened during this match. Mistakes you've made, how you moved, did you communicate well?</h6>
+        <h6>*Select a Category*</h6>
+        <h6>*Priority 1 = most important*</h6>
     </div>
-    <form action="/matches/<%=matchId%>/notes">
-        <label for="category">Category</label>
-        <select name="category">
-            <option value="">-- Select one --</option>
-            <option value="Positioning">Positioning</option>
-            <option value="Communication">Communication</option>
-            <option value="Mechanics">Mechanics</option>
-        </select>
-        <label for="importance">Priority (1 - most important)</label>
-        <input name="importance" max=5 min=1>
-        <textarea name="content" placeholder="Enter your notes here"></textarea>
+    <form action="/matches/<%=matchId%>/notes" id="add-note">
+        <div class="note-options">
+            <div>
+                <label for="category">Category</label>
+                <select name="category">
+                    <option value="">-- Select one --</option>
+                    <option value="Positioning">Positioning</option>
+                    <option value="Communication">Communication</option>
+                    <option value="Mechanics">Mechanics</option>
+                </select>
+            </div>
+            <div>
+                <label for="importance">Priority</label>
+                <input type="number" name="importance" max=5 min=1>
+            </div>
+        </div>
+        <textarea name="content" placeholder="Enter your notes here. Be really honest as you type out what happened during this match. Think about the mistakes you've made, how you moved, did you communicate well?"></textarea>
         <button type="submit">Add Note</button>
     </form>
 </div>
