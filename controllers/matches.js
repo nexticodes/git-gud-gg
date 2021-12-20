@@ -2,7 +2,8 @@ module.exports = {
     create,
     index,
     new: newMatch,
-    show
+    show,
+    update
 }
 
 const Match = require('./../models/match');
@@ -54,4 +55,15 @@ function show(req, res){
         const isOwnUser = match.user._id.equals(res.locals.user._id)
         res.render('matches/show', {title: '', match, isOwnUser});
     });
+};
+
+async function update(req, res){
+    req.body.character = getCharInfo(req.body.character)[0];
+    req.body.win = (!!req.body.win);
+    const match = await Match.findOneAndUpdate({_id: req.params.id}, req.body, {
+        new: true
+    });
+    match.save((err) => {
+        res.redirect(`/matches/${match._id}`);
+    })
 }
