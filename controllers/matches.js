@@ -3,7 +3,8 @@ module.exports = {
     index,
     new: newMatch,
     show,
-    update
+    update,
+    delete: removeOne
 }
 
 const Match = require('./../models/match');
@@ -26,8 +27,8 @@ function create(req, res){
         user.totalKills += parseInt(req.body.kills);
         user.totalDeaths += parseInt(req.body.deaths);
         user.kdr = (user.totalKills / user.totalDeaths).toFixed(2);
-        user.numGames++;
         user.matches.push(match);
+        user.numGames = user.matches.length;
         user.save((err) => {
             if (err) res.redirect('/matches/new');
             res.redirect('/matches');
@@ -63,7 +64,31 @@ async function update(req, res){
     const match = await Match.findOneAndUpdate({_id: req.params.id}, req.body, {
         new: true
     });
+    const user = await User.findById(res.locals.user._id).populate('matches');
+    user.totalKills = user.matches.reduce((acc, curr) => {
+        acc += curr.kills;
+        return acc;
+    }, 0);
+    user.totalDeaths = user.matches.reduce((acc, curr) => {
+        acc += curr.deaths;
+        return acc;
+    }, 0);
+    user.kdr = (user.totalKills / user.totalDeaths).toFixed(2);
     match.save((err) => {
+        user.save();
         res.redirect(`/matches/${match._id}`);
     })
 }
+
+async function removeOne(req, res) {
+    const match = await Match.findOneAndDelete(req.params.id);
+    const user = await User.findById(res.locals.user._id);
+    user.totalKills -= match.kills;
+    user.totalDeaths -= match.deaths;
+    user.kdr = (user.totalKills / user.totalDeaths).toFixed(2);
+    user.matches = user.matches.filter(m => !m._id.equals(req.params.id));
+    user.numGames = user.matches.length;
+    user.save((err) => {
+        res.redirect('/matches');
+    });
+};
