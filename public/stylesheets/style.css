@@ -129,6 +129,8 @@ form button {
   justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
+  text-align: right;
+  width: 80%;
 }
 
 .details-button {
@@ -154,6 +156,17 @@ form button {
 
 .match-container > form {
   transform: rotate(90deg);
+}
+
+.options-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+  padding: 10px;
+  border: 1px solid black;
+  border-top: 0px;
+  margin-bottom: 20px;
 }
 
 .note {
@@ -221,9 +234,12 @@ textarea[name="content"]{
 
 .avatar {
   width: 20%;
-  height: 60%;
+  height: 80%;
   margin: 0 4%;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
 }
 
 .scores {
@@ -235,7 +251,9 @@ textarea[name="content"]{
   height: 70%;
   margin: 0 0 0 15%;
   border: 1px solid black;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .match-details > .result {
@@ -247,7 +265,7 @@ textarea[name="content"]{
 }
 
 .match-details {
-  margin: 30px auto;
+  margin: 30px auto 0px auto;
   height: 150px;
 }
 
@@ -295,4 +313,88 @@ footer {
   align-items: center;
   justify-content: center;
   bottom: 0;
+}
+
+.backdrop {
+  z-index: 50;
+  background-color:rgb(34, 34, 36);
+  background-size: cover;
+  opacity: 0.7;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 15vh;
+  left: 15vw;
+  align-items: center;
+  height: 70vh;
+  width: 70vw;
+  border: 1px solid black;
+  box-shadow: 0px 5px 10px whitesmoke;
+  background: white;
+  margin: auto;
+  z-index: 51;
+  text-align: center;
+}
+
+.modal h1 {
+  margin: 5vh 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#update-match {
+  border: 1px solid black;
+  height: 70%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4%;
+}
+
+#update-match .score-container {
+  margin-top: 20px;
+}
+
+#update-match .score-container div label {
+  margin: 5px auto;
+
+}
+
+#update-match .weapons-container {
+  height: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#update-match .button-container { 
+  margin: 0 auto;
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#x-close {
+  position: absolute;
+  top: -2%;
+  right: 5%;
+  cursor: pointer;
+}
+
+#close-btn{
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
 }
