@@ -5,7 +5,7 @@
     <div class="modal hidden">
             <h1 id="x-close">X</h1>
             <h1>Update Match Details</h1>
-            <form method="PUT"  id="update-match">
+            <form action="/matches/<%=match._id%>?_method=PUT" method="POST" id="update-match">
                 <div>
                     <label for="character">
                         Character:
@@ -34,15 +34,17 @@
                     <div class="score-container">
                         <div>
                             <label for="kills">
-                                Kills <input type="number" name="kills" min="0" max="60">
+                                Kills <input type="number" name="kills" min="0" max="60" required>
                             </label>
                             <label for="deaths">
-                                Death(s) <input type="number" name="deaths" min="0" max="10">
+                                Death(s) <input type="number" name="deaths" min="0" max="10"
+                                required>
                             </label>
                         </div>
                         <div>
                             <label for="placement">
-                                Placement <input type="number" min="0" max="20" placeholder="/20">
+                                Placement <input type="number" min="0" max="20" placeholder="/20"
+                                required>
                             </label>
                             <label for="win">
                                 Win?<input type="checkbox" name="win">
@@ -51,7 +53,7 @@
                     </div>
                     <div class="weapons-container">
                         Loadout
-                        <select name="weapon1" id="weapon1-select">
+                        <select name="weapon1" id="weapon1-select" required>
                             <option value="">-- Weapon1 --</option>
                             <option value="Bocek Compound Bow">Bocek Compound Bow</option>
                             <option value="HAVOC">Havoc</option>
@@ -82,7 +84,7 @@
                             <option value="Alternator SMG">Alternator SMG</option>
                             <option value="Kraber .50-Cal Sniper">Kraber .50-Cal Sniper</option>
                         </select>
-                        <select name="weapon2" id="weapon2-select">
+                        <select name="weapon2" id="weapon2-select" required>
                             <option value="">-- Weapon2 --</option>
                             <option value="Bocek Compound Bow">Bocek Compound Bow</option>
                             <option value="HAVOC">Havoc</option>
@@ -127,9 +129,9 @@
         <h1>Match Details</h1>
         <div class="match-details">
             <div class="avatar">
-                <img>
+                <img src="<%=match.character.path%>">
                 <p>
-                    <%= match.character %>
+                    <%= match.character.name %>
                 </p>
             </div>
             <div class="scores">
