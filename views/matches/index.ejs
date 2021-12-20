@@ -4,30 +4,75 @@
     <% if (matches.length == 0) {%>
     <h1>It seems like you haven't recorded any matches.</h1>
     <% } else { %>
-        <h1 class="content-h1" >Recently Played</h1>
-        <% matches.forEach(m => { %>
-            <div class="match-container">
-                <div class="avatar">
-                    <img src="<%=m.character.path%>">
-                    <p><%=m.character.name%></p>
-                </div>
-                <div class="scores">
-                    <h2>Kills: <%= m.kills %></h2>
-                    <h2>Deaths: <%= m.deaths %></h2>
-                    <h2>K/D: <%= (m.kills / ((m.deaths === 0) ? 1 : m.deaths)).toFixed(2) %></h2>
-                </div>
-                <div class="result">
-                   <h1><%= (m.win) ? 'W' : 'L' %></h1>
-                </div>
-                <form action="/matches/<%= m._id %>" method="GET">
-                    <input class="details-button" type="submit" value="DETAILS">
-                </form>
+        <h1 class="content-h1">MATCHES</h1>
+        <div class="list-options">
+            <button class="btn-active" id="user-matches-btn" type="click">My Matches</button> <button id="all-matches-btn" type="click">All Matches</button>
+        </div>
+
+        <content>
+            <div class="index-match-container hidden" id="user-matches">
+                <h1 class="content-h1">My Matches</h1>
+                <% userMatches.forEach(m => { %>
+                    <div class="match-container">
+                        <div class="avatar">
+                            <img src="<%=m.character.path%>">
+                            <p><%=m.character.name%></p>
+                        </div>
+                        <div class="scores">
+                            <h5>Kills: <%= m.kills %></h5>
+                            <h5>Deaths: <%= m.deaths %></h5>
+                            <h5>K/D: <%= (m.kills / ((m.deaths === 0) ? 1 : m.deaths)).toFixed(2) %></h5>
+                        </div>
+                        <div class="result">
+                            <h1><%= (m.win) ? 'W' : 'L' %></h1>
+                        </div>
+                        <form action="/matches/<%= m._id %>" method="GET">
+                            <input class="details-button" type="submit" value="DETAILS">
+                        </form>
+                    </div>
+                <% }) %>
             </div>
-        <% }) %>
-    <%} %>
-    <form action="/matches/new" method="GET">
-        <button class="add-sign" type="submit">+</button>
-    </form>
+            <div class="index-match-container" id="all-matches">
+                <h1 class="content-h1">All Matches</h1>
+                <% matches.forEach(m => { %>
+                    <div class="match-container">
+                        <div class="avatar">
+                            <img src="<%=m.character.path%>">
+                            <p><%=m.character.name%></p>
+                        </div>
+                        <div class="scores">
+                            <h5>Kills: <%= m.kills %></h5>
+                            <h5>Deaths: <%= m.deaths %></h5>
+                            <h5>K/D: <%= (m.kills / ((m.deaths === 0) ? 1 : m.deaths)).toFixed(2) %></h5>
+                        </div>
+                        <div class="result">
+                            <h1><%= (m.win) ? 'W' : 'L' %></h1>
+                        </div>
+                        <form action="/matches/<%= m._id %>" method="GET">
+                            <input class="details-button" type="submit" value="DETAILS">
+                        </form>
+                    </div>
+                <% }) %>
+            </div>
+        </content>
+    <% } %>
+        <form action="/matches/new" method="GET">
+            <button class="add-sign" type="submit">+</button>
+        </form>
+        <script>
+            const userMatchesEl = document.querySelector('#user-matches');
+            const allMatchesEl = document.querySelector('#all-matches');
+            const userMatchesBtn = document.querySelector('#user-matches-btn');
+            const allMatchesBtn = document.querySelector('#all-matches-btn');
+            const toggleVis = (e) => {
+                userMatchesBtn.classList.toggle('btn-active');
+                allMatchesBtn.classList.toggle('btn-active');
+                userMatchesEl.classList.toggle('hidden');
+                allMatchesEl.classList.toggle('hidden');
+            };
+            userMatchesBtn.addEventListener('click', toggleVis);
+            allMatchesBtn.addEventListener('click', toggleVis);
+        </script>
 </div>
 
 <%- include('../partials/footer') %>
