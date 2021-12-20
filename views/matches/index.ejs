@@ -8,7 +8,8 @@
         <% matches.forEach(m => { %>
             <div class="match-container">
                 <div class="avatar">
-                    LOL
+                    <img src="<%=m.character.path%>">
+                    <p><%=m.character.name%></p>
                 </div>
                 <div class="scores">
                     <h2>Kills: <%= m.kills %></h2>
