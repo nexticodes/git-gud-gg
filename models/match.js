@@ -11,7 +11,7 @@ const matchSchema = new Schema({
     kdr: Number,
     placement: Number,
     win: Boolean,
-    character: String,
+    character: Object,
     weapon1: String,
     weapon2: String,
     notes: [{
