@@ -8,8 +8,11 @@ module.exports = {
 const Match = require('./../models/match');
 const User = require('./../models/user');
 
+const getCharInfo = require('./../public/javascripts/characters');
+
 function create(req, res){
     let userId = res.locals.user._id;
+    req.body.character = getCharInfo(req.body.character)[0];
     req.body.win = (!!req.body.win);
     req.body.user = userId;
     // Save the match
