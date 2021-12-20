@@ -15,6 +15,11 @@ router.get('/new', matchesCtrl.new);
 /* GET matches/:id - show page */
 router.get('/:id', matchesCtrl.show);
 
+/* UPDATE matches/:id - show page */
 router.put('/:id', matchesCtrl.update);
+
+/* DELETE matches/:id */
+router.delete('/:id', matchesCtrl.delete);
+
 
 module.exports = router;
