@@ -15,4 +15,6 @@ router.get('/new', matchesCtrl.new);
 /* GET matches/:id - show page */
 router.get('/:id', matchesCtrl.show);
 
+router.put('/:id', matchesCtrl.update);
+
 module.exports = router;
