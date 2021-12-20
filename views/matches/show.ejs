@@ -3,8 +3,59 @@
 
     </div>
     <div class="modal hidden">
-            <h1 id="x-close">X</h1>
-            <h1>Update Match Details</h1>
+
+    </div>
+
+    <div class="content-container">
+        <h1>Match Details</h1>
+        <div class="match-details">
+            <div class="avatar">
+                <img src="<%=match.character.path%>">
+                <p>
+                    <%= match.character.name %>
+                </p>
+            </div>
+            <div class="scores">
+                <h2>Kills: <%= match.kills %>
+                </h2>
+                <h2>Deaths: <%= match.deaths %>
+                </h2>
+                <h2>K/D: <%= (match.kills / ((match.deaths===0) ? 1 : match.deaths)).toFixed(2) %>
+                </h2>
+            </div>
+            <div class="result">
+                <h1>
+                    <%= (match.win) ? 'W' : 'L' %>
+                </h1>
+            </div>
+        </div>
+        <% if (isOwnUser) {%>
+            <div class="options-container">
+                <img class="icon" src="/images/assets/edit-icon.svg" id="update-match-button" type="click" alt="Update">
+                <img class="icon" src="/images/assets/delete-icon.svg" id="delete-match-button" alt="Delete type="
+                    click">
+            </div>
+            <script>
+                const updateBtnEl = document.querySelector('#update-match-button');
+                const deleteBtnEl = document.querySelector('#delete-match-button');
+                const modalEl = document.querySelector('.modal');
+                const backdropEl = document.querySelector('.backdrop');
+                const deleteModalEl = document.querySelector('#delete-modal');
+                const updateModalEl = document.querySelector('#update-modal');
+                
+                const toggleHidden = (event) => {
+                    modalEl.classList.toggle('hidden');
+                    backdropEl.classList.toggle('hidden');
+                };
+
+                backdropEl.addEventListener('click', (e) => {
+                    backdropEl.classList.toggle('hidden', true);
+                });
+
+                updateBtnEl.addEventListener('click', (event) => {
+                    modalEl.innerHTML = `
+                <h1 class="x-close">X</h1>
+                <h1>Update Match Details</h1>
             <form action="/matches/<%=match._id%>?_method=PUT" method="POST" id="update-match">
                 <div>
                     <label for="character">
@@ -118,63 +169,43 @@
                     </div>
                 </label>
                 <div class="button-container">
-                    <p id="close-btn">Close</p>
+                    <p class="close-btn">Close</p>
                     <button type="submit">Update</button>
                 </div>
+                </div>
             </form>
-        </div>
-    </div>
-
-    <div class="content-container">
-        <h1>Match Details</h1>
-        <div class="match-details">
-            <div class="avatar">
-                <img src="<%=match.character.path%>">
-                <p>
-                    <%= match.character.name %>
-                </p>
-            </div>
-            <div class="scores">
-                <h2>Kills: <%= match.kills %>
-                </h2>
-                <h2>Deaths: <%= match.deaths %>
-                </h2>
-                <h2>K/D: <%= (match.kills / ((match.deaths===0) ? 1 : match.deaths)).toFixed(2) %>
-                </h2>
-            </div>
-            <div class="result">
-                <h1>
-                    <%= (match.win) ? 'W' : 'L' %>
-                </h1>
-            </div>
-        </div>
-        <% if (isOwnUser) {%>
-            <div class="options-container">
-                <button id="update-match-button" type="click">Update</button>
-                <button id="delete-match-button" type="click">Delete</button>
-            </div>
-            <script>
-                const updateBtnEl = document.querySelector('#update-match-button');
-                const deleteBtnEl = document.querySelector('#delete-match-button');
-                const closeBtnEl = document.querySelector('#close-btn');
-                const xEl = document.querySelector('#x-close');
-                const modalEl = document.querySelector('.modal');
-                const backdropEl = document.querySelector('.backdrop');
-                
-                const toggleHidden =  (event) => {
+                    `
                     modalEl.classList.toggle('hidden');
                     backdropEl.classList.toggle('hidden');
-                };
-
-                updateBtnEl.addEventListener('click', toggleHidden);
-
-                closeBtnEl.addEventListener('click', toggleHidden);
-
-                xEl.addEventListener('click', toggleHidden);
+                    helper();
+                });
 
                 deleteBtnEl.addEventListener('click', (event) => {
-                    console.log("delete");
+                    modalEl.innerHTML = `
+                    <h1 class="x-close">X</h1>
+                        <h1>Are you sure you want to delete this match?</h1>
+                        <form action="/matches/<%=match._id%>?_method=DELETE" method="POST">
+                            <p class="close-btn">NO</p>
+                            <button type="submit">YES</button>
+                        </form>
+                    `
+                    modalEl.classList.toggle('hidden');
+                    backdropEl.classList.toggle('hidden');
+                    helper();
                 });
+
+            function helper() {
+                const closeBtnEls = document.querySelectorAll('.close-btn');
+                const xEls = document.querySelectorAll('.x-close');
+                const applyListeners = (elsArr) => {
+                    elsArr.forEach(el => {
+                        el.addEventListener('click', toggleHidden);
+                    });
+                };
+                applyListeners(xEls);
+                applyListeners(closeBtnEls);
+            }
+
 
             </script>
             <% } %>
