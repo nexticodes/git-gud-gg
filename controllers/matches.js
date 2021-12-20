@@ -8,7 +8,7 @@ module.exports = {
 const Match = require('./../models/match');
 const User = require('./../models/user');
 
-const getCharInfo = require('./../public/javascripts/characters');
+const getCharInfo = require('../public/javascripts/getCharInfo');
 
 function create(req, res){
     let userId = res.locals.user._id;
