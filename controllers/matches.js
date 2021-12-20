@@ -38,7 +38,9 @@ function create(req, res){
 
 function index(req, res){
     Match.find({}, (err, matches) => {
-        res.render('matches/index', {title: 'ALL MATCHES', matches});
+        let reversed = matches.reverse();
+        let userMatches = matches.filter(m => m.user._id.equals(res.locals.user._id));
+        res.render('matches/index', {title: 'ALL MATCHES', matches: reversed, userMatches });
     })
 };
 
