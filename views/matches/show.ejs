@@ -1,4 +1,127 @@
 <%- include('./../partials/header') %>
+    <div class="backdrop">
+
+    </div>
+    <div class="modal">
+            <h1 id="x-close">X</h1>
+            <h1>Update Match Details</h1>
+            <form method="PUT"  id="update-match">
+                <div>
+                    <label for="character">
+                        Character:
+                        <select name="character">
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Bloodhound">Bloodhound</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Lifeline">Lifeline</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Wraith">Wraith</option>
+                            <option value="Caustic">Caustic</option>
+                            <option value="Mirage">Mirage</option>
+                            <option value="Octane">Octane</option>
+                            <option value="Wattson">Wattson</option>
+                            <option value="Crypto">Crypto</option>
+                            <option value="Revenant">Revenant</option>
+                            <option value="Loba">Loba</option>
+                            <option value="Rampart">Rampart</option>
+                            <option value="Horizon">Horizon</option>
+                            <option value="Fuse">Fuse</option>
+                            <option value="Seer">Seer</option>
+                            <option value="Ashe">Ashe</option>                      
+                        </select>
+                    </label>
+                </div>
+                    <div class="score-container">
+                        <div>
+                            <label for="kills">
+                                Kills <input type="number" name="kills" min="0" max="60">
+                            </label>
+                            <label for="deaths">
+                                Death(s) <input type="number" name="deaths" min="0" max="10">
+                            </label>
+                        </div>
+                        <div>
+                            <label for="placement">
+                                Placement <input type="number" min="0" max="20" placeholder="/20">
+                            </label>
+                            <label for="win">
+                                Win?<input type="checkbox" name="win">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="weapons-container">
+                        Loadout
+                        <select name="weapon1" id="weapon1-select">
+                            <option value="">-- Weapon1 --</option>
+                            <option value="Bocek Compound Bow">Bocek Compound Bow</option>
+                            <option value="HAVOC">Havoc</option>
+                            <option value="Devotion">Devotion</option>
+                            <option value="L-Star">L-Star</option>
+                            <option value="Triple Take">Triple Take</option>
+                            <option value="Volt">Volt</option>
+                            <option value="VK-47 Flatline">VK-47 Flatline</option>
+                            <option value="Hemlok Burst AR">Hemlok Burst AR</option>
+                            <option value="Rampage">Rampage</option>
+                            <option value="30-30 Repeater">30-30 Repeater</option>
+                            <option value="Wingman">Wingman</option>
+                            <option value="Prowler Burst PDW">Prowler Burst PDW</option>
+                            <option value="C.A.R. SMG">C.A.R. SMG</option>
+                            <option value="R-301 Carbine">R-301 Carbine</option>
+                            <option value="R-99 SMG">R-99 SMG</option>
+                            <option value="RE-45">RE-45</option>
+                            <option value="P2020">P2020</option>
+                            <option value="EVA8 Auto">EVA8 Auto</option>
+                            <option value="Mastiff Shotgun">MastiffShotgun</option>
+                            <option value="Mozambique">Mozambique</option>
+                            <option value="Peacekeeper">Peacekeeper</option>
+                            <option value="Charge Rifle">Charge Rifle</option>
+                            <option value="Longbow DMR">Longbow DMR</option>
+                            <option value="Sentinel">Sentinel</option>
+                            <option value="Spitfire">Spitfire</option>
+                            <option value="G7 Scout">G7 Scout</option>
+                            <option value="Alternator SMG">Alternator SMG</option>
+                            <option value="Kraber .50-Cal Sniper">Kraber .50-Cal Sniper</option>
+                        </select>
+                        <select name="weapon2" id="weapon2-select">
+                            <option value="">-- Weapon2 --</option>
+                            <option value="Bocek Compound Bow">Bocek Compound Bow</option>
+                            <option value="HAVOC">Havoc</option>
+                            <option value="Devotion">Devotion</option>
+                            <option value="L-Star">L-Star</option>
+                            <option value="Triple Take">Triple Take</option>
+                            <option value="Volt">Volt</option>
+                            <option value="VK-47 Flatline">VK-47 Flatline</option>
+                            <option value="Hemlok Burst AR">Hemlok Burst AR</option>
+                            <option value="Rampage">Rampage</option>
+                            <option value="30-30 Repeater">30-30 Repeater</option>
+                            <option value="Wingman">Wingman</option>
+                            <option value="Prowler Burst PDW">Prowler Burst PDW</option>
+                            <option value="C.A.R. SMG">C.A.R. SMG</option>
+                            <option value="R-301 Carbine">R-301 Carbine</option>
+                            <option value="R-99 SMG">R-99 SMG</option>
+                            <option value="RE-45">RE-45</option>
+                            <option value="P2020">P2020</option>
+                            <option value="EVA8 Auto">EVA8 Auto</option>
+                            <option value="Mastiff Shotgun">MastiffShotgun</option>
+                            <option value="Mozambique">Mozambique</option>
+                            <option value="Peacekeeper">Peacekeeper</option>
+                            <option value="Charge Rifle">Charge Rifle</option>
+                            <option value="Longbow DMR">Longbow DMR</option>
+                            <option value="Sentinel">Sentinel</option>
+                            <option value="Spitfire">Spitfire</option>
+                            <option value="G7 Scout">G7 Scout</option>
+                            <option value="Alternator SMG">Alternator SMG</option>
+                            <option value="Kraber .50-Cal Sniper">Kraber .50-Cal Sniper</option>
+                        </select>
+                    </div>
+                </label>
+                <div class="button-container">
+                    <p id="close-btn">Close</p>
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <div class="content-container">
         <h1>Match Details</h1>
@@ -28,37 +151,61 @@
                 <button id="update-match-button" type="click">Update</button>
                 <button id="delete-match-button" type="click">Delete</button>
             </div>
-        <% } %>
-        <div class="notes-container">
-            <h1>Notes</h1>
-            <hr>
-            <% if (match.notes.length !==0){ %>
-                <% match.notes.forEach(n=> { %>
-                    <div class="note">
-                        <div class="note-header">
-                            <div class="category">
-                                <h6>Category</h6>
-                                <h5>
-                                    <%= n.category %>
-                                </h5>
-                            </div>
-                            <div class="importance">
-                                <h6>Priority</h6>
-                                <h5>
-                                    <%= n.importance %>
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="note-content">
-                            <p id="content">
-                                <%= n.content %>
-                            </p>
-                        </div>
-                        <div class="note-poster">
-                            <img class="note-avatar" src="<%=n.postedBy.avatar%>">
-                            <div class="note-poster-detail">
-                                <p>
-                                    <%= (n.postedBy.name===user.name) ? 'You' : n.postedBy.name.split(' ')[0]%></p>
+            <script>
+                const updateBtnEl = document.querySelector('#update-match-button');
+                const deleteBtnEl = document.querySelector('#delete-match-button');
+                const closeBtnEl = document.querySelector('#close-btn');
+                const xEl = document.querySelector('#x-close');
+                const modalEl = document.querySelector('.modal');
+                const backdropEl = document.querySelector('.backdrop');
+                
+                const toggleHidden =  (event) => {
+                    modalEl.classList.toggle('hidden');
+                    backdropEl.classList.toggle('hidden');
+                };
+
+                updateBtnEl.addEventListener('click', toggleHidden);
+
+                closeBtnEl.addEventListener('click', toggleHidden);
+
+                xEl.addEventListener('click', toggleHidden);
+
+                deleteBtnEl.addEventListener('click', (event) => {
+                    console.log("delete");
+                });
+
+            </script>
+            <% } %>
+                <div class="notes-container">
+                    <h1>Notes</h1>
+                    <hr>
+                    <% if (match.notes.length !==0){ %>
+                        <% match.notes.forEach(n=> { %>
+                            <div class="note">
+                                <div class="note-header">
+                                    <div class="category">
+                                        <h6>Category</h6>
+                                        <h5>
+                                            <%= n.category %>
+                                        </h5>
+                                    </div>
+                                    <div class="importance">
+                                        <h6>Priority</h6>
+                                        <h5>
+                                            <%= n.importance %>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="note-content">
+                                    <p id="content">
+                                        <%= n.content %>
+                                    </p>
+                                </div>
+                                <div class="note-poster">
+                                    <img class="note-avatar" src="<%=n.postedBy.avatar%>">
+                                    <div class="note-poster-detail">
+                                        <p>
+                                            <%= (n.postedBy.name===user.name) ? 'You' : n.postedBy.name.split(' ')[0]%></p>
                             <p>Posted <%= n.createdAt.toLocaleDateString() %></p>
                         </div>
                     </div>
@@ -67,13 +214,13 @@
 
         <%} else { %>
            <h4>You don' t have any notes for this match yet!</h4>
-            <h5>Add a note by clicking the button below!</h5>
-            <% } %>
-            <hr>
-    </div>
-    <form action="/matches/<%=match._id%>/notes/new" method="GET">
-        <button class="add-sign" type="submit">+</button>
-    </form>
-</div>
+                                                <h5>Add a note by clicking the button below!</h5>
+                                                <% } %>
+                                                    <hr>
+                                    </div>
+                                    <form action="/matches/<%=match._id%>/notes/new" method="GET">
+                                        <button class="add-sign" type="submit">+</button>
+                                    </form>
+                                </div>
 
-<%- include('./../partials/footer') %>
+                                <%- include('./../partials/footer') %>
