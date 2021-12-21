@@ -25,10 +25,13 @@
                         </div>
                         <div class="result">
                             <h1><%= (m.win) ? 'W' : 'L' %></h1>
+                            <p>Result</p>
                         </div>
-                        <form action="/matches/<%= m._id %>" method="GET">
-                            <input class="details-button" type="submit" value="DETAILS">
-                        </form>
+                        <div class="details-button-container">
+                            <form action="/matches/<%= m._id %>" method="GET">
+                                <input class="details-button" type="submit" value="DETAILS">
+                            </form>
+                        </div>
                     </div>
                 <% }) %>
             </div>
@@ -38,7 +41,7 @@
                     <div class="match-container">
                         <div class="avatar">
                             <img src="<%=m.character.path%>">
-                            <p><%=m.character.name%></p>
+                            <a class="user-link" href='/'><%=m.user.name.split(' ')[0]%></a>
                         </div>
                         <div class="scores">
                             <h5>Kills: <%= m.kills %></h5>
@@ -47,10 +50,14 @@
                         </div>
                         <div class="result">
                             <h1><%= (m.win) ? 'W' : 'L' %></h1>
+                            <p>Result</p>
+
                         </div>
-                        <form action="/matches/<%= m._id %>" method="GET">
-                            <input class="details-button" type="submit" value="DETAILS">
-                        </form>
+                        <div class="details-button-container">
+                            <form action="/matches/<%= m._id %>" method="GET">
+                                <input class="details-button" type="submit" value="DETAILS">
+                            </form>
+                        </div>
                     </div>
                 <% }) %>
             </div>
