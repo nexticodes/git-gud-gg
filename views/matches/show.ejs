@@ -29,12 +29,11 @@
                 </h1>
             </div>
         </div>
-        <% if (isOwnUser) {%>
-            <div class="options-container">
+        <div class="options-container">
+            <% if (isOwnUser) {%>
                 <img class="icon" src="/images/assets/edit-icon.svg" id="update-match-button" type="click" alt="Update">
                 <img class="icon" src="/images/assets/delete-icon.svg" id="delete-match-button" alt="Delete type="
                     click">
-            </div>
             <script>
                 const updateBtnEl = document.querySelector('#update-match-button');
                 const deleteBtnEl = document.querySelector('#delete-match-button');
@@ -206,9 +205,15 @@
                 applyListeners(closeBtnEls);
             }
 
-
             </script>
+            <% } else { %>
+                <img class="note-avatar" src="<%=match.user.avatar%>">
+                <div class="match-poster-details">
+                    <p><%= match.user.name %></p>
+                    <p><small>Posted <%= match.createdAt.toLocaleDateString() %></small></p>
+                </div>
             <% } %>
+            </div>
                 <div class="notes-container">
                     <h1>Notes</h1>
                     <hr>
