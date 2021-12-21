@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const matchSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
-        required: true,
+        ref: 'User',
     },
     kills: Number,
     deaths: Number,
