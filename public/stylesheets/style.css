@@ -163,6 +163,10 @@ form button {
 .match-container .avatar {
   height: 18vh;
   width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .match-container .avatar img {
@@ -178,8 +182,20 @@ form button {
   flex-direction: column;
   justify-content: space-around;
   flex-grow: 5;
-  width: 75vw;
+  width: 60vw;
   height: 15vh;
+  margin: 0 3vw;
+}
+
+.match-container .scores h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  float: left;
+}
+
+.match-container .scores span {
+  font-size: 5vh;
 }
 
 
@@ -218,14 +234,6 @@ form button {
 }
 
 
-.match-details {
-  width: 70vw;
-  height: 20vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border: 1px solid black;
-}
 
 .user-link {
   text-decoration: none;
@@ -242,6 +250,98 @@ form button {
   border-top: 0px;
   margin-bottom: 20px;
   border-radius: 0px 0px 10px 10px;
+}
+
+.match-details {
+  width: 80vw;
+  height: 50vh;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.match-details .avatar {
+  width: 20vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.match-details .avatar img {
+  height: 15vh;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.match-details .scores {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  flex-grow: 3;
+}
+
+
+.match-details .scores h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.match-details .scores span {
+  font-size: 6vh;
+}
+
+.match-details .result {
+  width: 20vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 2;
+}
+
+.match-details .result h1 {
+  font-size: 12vh;
+}
+
+.notes-container {
+  align-items: center;
+  text-align: center;
+  width: 90%;
+}
+
+.add-sign {
+  font-size: 48px;
+  text-decoration: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  line-height: 0px;
+}
+
+.score-container > div{
+  display: flex;
+  flex-direction: column;
+}
+
+.score-container {
+  display: flex;
+  justify-self: center;
+}
+
+.weapons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .note {
@@ -307,64 +407,6 @@ textarea[name="content"]{
   margin: 20px auto;
 }
 
-.avatar {
-  width: 20%;
-  height: 80%;
-  margin: 0 4%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  text-align: center;
-}
-
-.scores {
-  margin-right: auto;
-}
-
-.match-details > .result {
-  width: 20%;
-  height: 70%;
-  margin: 0 4%;
-  border: 1px solid black;
-  text-align: center;
-}
-
-.match-details {
-  margin: 30px auto 0px auto;
-  height: 150px;
-}
-
-.notes-container {
-  align-items: center;
-  text-align: center;
-  width: 90%;
-}
-
-.add-sign {
-  font-size: 48px;
-  text-decoration: none;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  line-height: 0px;
-}
-
-.score-container > div{
-  display: flex;
-  flex-direction: column;
-}
-
-.score-container {
-  display: flex;
-  justify-self: center;
-}
-
-.weapons-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
 
 footer {
   text-align: center;

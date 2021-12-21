@@ -19,9 +19,12 @@
                             <p><%=m.character.name%></p>
                         </div>
                         <div class="scores">
-                            <h5>Kills: <%= m.kills %></h5>
-                            <h5>Deaths: <%= m.deaths %></h5>
-                            <h5>K/D: <%= (m.kills / ((m.deaths === 0) ? 1 : m.deaths)).toFixed(2) %></h5>
+                            <h4><small>Kills</small> <span><%= m.kills %></span>
+                            </h4>
+                            <h4><small>Deaths</small><span><%= m.deaths %></span>
+                            </h4>
+                            <h4><small>K/D</small><span><%= (m.kills / ((m.deaths===0) ? 1 : m.deaths)).toFixed(2) %></span>
+                            </h4>
                         </div>
                         <div class="result">
                             <h1><%= (m.win) ? 'W' : 'L' %></h1>
@@ -44,9 +47,12 @@
                             <a class="user-link" href='/'><%=m.user.name.split(' ')[0]%></a>
                         </div>
                         <div class="scores">
-                            <h5>Kills: <%= m.kills %></h5>
-                            <h5>Deaths: <%= m.deaths %></h5>
-                            <h5>K/D: <%= (m.kills / ((m.deaths === 0) ? 1 : m.deaths)).toFixed(2) %></h5>
+                            <h4><small>Kills</small> <span><%= m.kills %></span>
+                            </h4>
+                            <h4><small>Deaths</small><span><%= m.deaths %></span>
+                            </h4>
+                            <h4><small>K/D</small><span><%= (m.kills / ((m.deaths===0) ? 1 : m.deaths)).toFixed(2) %></span>
+                            </h4>
                         </div>
                         <div class="result">
                             <h1><%= (m.win) ? 'W' : 'L' %></h1>

@@ -16,17 +16,16 @@
                 </p>
             </div>
             <div class="scores">
-                <h2>Kills: <%= match.kills %>
-                </h2>
-                <h2>Deaths: <%= match.deaths %>
-                </h2>
-                <h2>K/D: <%= (match.kills / ((match.deaths===0) ? 1 : match.deaths)).toFixed(2) %>
-                </h2>
+                <h4><small>Kills</small> <span><%= match.kills %></span>
+                </h4>
+                <h4><small>Deaths</small><span><%= match.deaths %></span>
+                </h4>
+                <h4><small>K/D</small><span><%= (match.kills / ((match.deaths===0) ? 1 : match.deaths)).toFixed(2) %></span>
+                </h4>
             </div>
             <div class="result">
-                <h1>
-                    <%= (match.win) ? 'W' : 'L' %>
-                </h1>
+                <h1><%= (match.win) ? 'W' : 'L' %></h1>
+                <p>Result</p>
             </div>
         </div>
         <div class="options-container">
