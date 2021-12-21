@@ -10,6 +10,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 a {
@@ -87,7 +88,6 @@ nav .avatar{
   padding: 5% 2%;
   border: 1px solid black;
   width: 90vw;
-  overflow-y: hidden;
   z-index: 49;
 }
 
@@ -153,6 +153,7 @@ form button {
   justify-content: space-evenly;
   align-items: center;
   border: 1px solid black;
+  border-right: 0;
 }
 
 .match-container .avatar {

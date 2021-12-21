@@ -34,24 +34,17 @@
                 <img class="icon" src="/images/assets/edit-icon.svg" id="update-match-button" type="click" alt="Update">
                 <img class="icon" src="/images/assets/delete-icon.svg" id="delete-match-button" alt="Delete type="
                     click">
-            <script>
+            <script defer>
                 const updateBtnEl = document.querySelector('#update-match-button');
                 const deleteBtnEl = document.querySelector('#delete-match-button');
                 const modalEl = document.querySelector('.modal');
                 const backdropEl = document.querySelector('.backdrop');
                 const deleteModalEl = document.querySelector('#delete-modal');
                 const updateModalEl = document.querySelector('#update-modal');
-                
-                const toggleHidden = (event) => {
-                    modalEl.classList.toggle('hidden');
-                    backdropEl.classList.toggle('hidden');
-                };
-
-                backdropEl.addEventListener('click', (e) => {
-                    backdropEl.classList.toggle('hidden', true);
-                });
+                const bodyEl = document.querySelector('body');
 
                 updateBtnEl.addEventListener('click', (event) => {
+                    toggleModal();
                     modalEl.innerHTML = `
                 <h1 class="x-close">X</h1>
                 <h1>Update Match Details</h1>
@@ -174,12 +167,11 @@
                 </div>
             </form>
                     `
-                    modalEl.classList.toggle('hidden');
-                    backdropEl.classList.toggle('hidden');
                     helper();
                 });
 
                 deleteBtnEl.addEventListener('click', (event) => {
+                    toggleModal();
                     modalEl.innerHTML = `
                     <h1 class="x-close">X</h1>
                         <h1>Are you sure you want to delete this match?</h1>
@@ -188,17 +180,20 @@
                             <button type="submit">YES</button>
                         </form>
                     `
-                    modalEl.classList.toggle('hidden');
-                    backdropEl.classList.toggle('hidden');
                     helper();
                 });
 
+                function toggleModal(){
+                    modalEl.classList.toggle('hidden');
+                    backdropEl.classList.toggle('hidden');
+                }
+                
             function helper() {
                 const closeBtnEls = document.querySelectorAll('.close-btn');
                 const xEls = document.querySelectorAll('.x-close');
                 const applyListeners = (elsArr) => {
                     elsArr.forEach(el => {
-                        el.addEventListener('click', toggleHidden);
+                        el.addEventListener('click', toggleModal);
                     });
                 };
                 applyListeners(xEls);
