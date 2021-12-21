@@ -180,11 +180,12 @@ form button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 90%;
+  width: 65%;
   padding: 10px;
   border: 1px solid black;
   border-top: 0px;
   margin-bottom: 20px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .note {
