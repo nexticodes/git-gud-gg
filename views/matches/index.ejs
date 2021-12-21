@@ -6,7 +6,7 @@
     <% } else { %>
         <h1 class="content-h1">MATCHES</h1>
         <div class="list-options">
-            <button class="btn-active" id="user-matches-btn" type="click">My Matches</button> <button id="all-matches-btn" type="click">All Matches</button>
+            <button class="btn-active" id="user-matches-btn" type="click">My Matches</button> <button id="all-matches-btn" type="click" disabled>All Matches</button>
         </div>
 
         <content>
@@ -69,6 +69,8 @@
                 allMatchesBtn.classList.toggle('btn-active');
                 userMatchesEl.classList.toggle('hidden');
                 allMatchesEl.classList.toggle('hidden');
+                userMatchesBtn.disabled = !userMatchesBtn.disabled;
+                allMatchesBtn.disabled = !allMatchesBtn.disabled;
             };
             userMatchesBtn.addEventListener('click', toggleVis);
             allMatchesBtn.addEventListener('click', toggleVis);
