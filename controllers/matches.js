@@ -49,12 +49,16 @@ function newMatch(req, res) {
 };
 
 function show(req, res){
-    Match.findById(req.params.id).populate('notes').populate({
+    Match.findById(req.params.id)
+    .populate('user')
+    .populate('notes')
+    .populate({
         path: 'notes',
         populate: {
             path: 'postedBy',
         }
     }).exec((err, match) => {
+        console.log(match);
         const isOwnUser = match.user._id.equals(res.locals.user._id)
         res.render('matches/show', {title: '', match, isOwnUser});
     });
