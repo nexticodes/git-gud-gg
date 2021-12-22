@@ -6,8 +6,8 @@ const weapons = [
         name: 'Alternator SMG',
         path: '/images/weapon-icons/Alternator SMG.svg',
     },{
-        name: 'Bocek Compund Bow',
-        path: '/images/weapon-icons/Bocek Compund Bow.svg',
+        name: 'Bocek Compound Bow',
+        path: '/images/weapon-icons/Bocek Compound Bow.svg',
     },{
         name: 'C.A.R. SMG',
         path: '/images/weapon-icons/CAR SMG.svg',
