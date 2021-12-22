@@ -1,0 +1,45 @@
+<%- include('./../partials/header') %>
+    <div class="content-container">
+        <h1>USER PROFILE</h1>
+        <div class="profile-container">
+            <div class="profile-avatar">
+                <img class="avatar" src="<%=user.avatar%>">
+                <h3><%=user.name.split(' ')[0]%></h3>
+                <h6>Joined <%= new Date(user.createdAt).toLocaleDateString()%></h6>
+            </div>
+            <div class="profile-score">
+                <h2>PLAYER STATS</h2>
+                <div class="score-details">
+                    <div>
+                        <h4>TOTAL KILLS</h4>
+                        <h2><%=user.totalKills%></h2>
+                    </div>
+                    <div>
+                        <h4>TOTAL DEATHS</h4>
+                        <h2><%=user.totalDeaths%></h2>
+                    </div>
+                    <div>
+                        <h4>K/D RATIO</h4>
+                        <h2><%=user.kdr%></h2>
+                    </div>
+                    <div>
+                        <h4>GAMES PLAYED</h4>
+                        <h2><%=user.numGames%></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-favorites">
+            <div>
+                <h4>MOST USED WEAPON</h4>
+                <img id="fave-weapon" src="<%=user.faveWeapon.path%>">
+                <h2><%=user.faveWeapon.name%></h2>
+            </div>
+            <div>
+                <h4>MOST USED CHARACTER</h4>
+                <img id="fave-char" src="<%=user.faveChar.path%>">
+                <h2><%=user.faveChar.name%></h2>
+            </div>
+        </div>
+    </div>
+<%- include('./../partials/footer') %>
