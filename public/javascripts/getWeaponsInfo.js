@@ -9,7 +9,7 @@ const weapons = [
         name: 'Bocek Compund Bow',
         path: '/images/weapon-icons/Bocek Compund Bow.svg',
     },{
-        name: 'CAR SMG',
+        name: 'C.A.R. SMG',
         path: '/images/weapon-icons/CAR SMG.svg',
     },{
         name: 'Charge Rifle',
@@ -18,7 +18,7 @@ const weapons = [
         name: 'Devotion',
         path: '/images/weapon-icons/Devotion.svg',
     },{
-        name: 'EVA-8 Shotgun',
+        name: 'EVA-8 Auto',
         path: '/images/weapon-icons/EVA-8 Shotgun.svg',
     },{
         name: 'G7 Scout',
@@ -30,7 +30,7 @@ const weapons = [
         name: 'Hemlok Burst AR',
         path: '/images/weapon-icons/Hemlok Burst AR.svg',
     },{
-        name: 'Kraber .50 Cal Sniper',
+        name: 'Kraber .50-Cal Sniper',
         path: '/images/weapon-icons/Kraber 50 Cal Sniper.svg',
     },{
         name: 'L-Star',
@@ -77,8 +77,8 @@ const weapons = [
         name: 'Triple Take',
         path: '/images/weapon-icons/Triple Take.svg',
     },{
-        name: 'VK-47 Flatiline',
-        path: '/images/weapon-icons/VK-47 Flatiline.svg',
+        name: 'VK-47 Flatline',
+        path: '/images/weapon-icons/VK-47 Flatline.svg',
     },{
         name: 'Volt SMG',
         path: '/images/weapon-icons/Volt SMG.svg',
