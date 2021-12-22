@@ -60,7 +60,6 @@ function show(req, res){
             path: 'postedBy',
         }
     }).exec((err, match) => {
-        console.log(match);
         const isOwnUser = match.user._id.equals(res.locals.user._id)
         res.render('matches/show', {title: '', match, isOwnUser});
     });
