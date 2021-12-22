@@ -34,6 +34,29 @@ nav {
   color: white;
 }
 
+nav img {
+  height: 45px;
+  width: 45px;
+  margin-left: 15px;
+}
+
+nav img:hover {
+  animation: icon-hover 0.5s forwards;
+}
+
+@keyframes icon-hover {
+  75%{
+    -webkit-filter: drop-shadow( 0px 0px 5px rgba(255, 255, 255));
+    filter: drop-shadow( 0px 0px 5px rgb(0, 50, 249));
+    transform: scale(1.1);
+  }
+  100%{
+    -webkit-filter: drop-shadow( 0px 0px 5px rgba(201, 201, 201));
+    filter: drop-shadow( 0px 0px 5px rgb(0, 50, 249));
+    transform: scale(1.05);
+  }
+}
+
 .nav-item {
   flex-grow: 1;
   display: flex;
@@ -41,6 +64,7 @@ nav {
   height: 50px;
   text-align: center;
   justify-content: center;
+  -webkit-text-stroke: 0.1px  black;
 }
 
 .nav-item:hover{
@@ -50,17 +74,24 @@ nav {
 
 @keyframes buttonHover {
   70%{
-    background-color: rgb(13, 73, 240);
+    text-shadow: rgb(13, 73, 240);
+    transform: scale(1.1);
   }
   100%{
-    background-color: rgb(12, 66, 214);
-    text-shadow: 0px 0px 20px white;
+    text-shadow: 
+    0px 0px 4px whitesmoke,
+    0px 0px 8px rgb(13, 73, 240);
+    transform: scale(1.05);
+
   }
 }
 
 .active {
-  background-color: rgb(12, 66, 214);
-  text-shadow: 0px 0px 20px white;
+  text-shadow: 
+  0px 0px 1px black,
+  0px 0px 4px whitesmoke,
+  0px 0px 8px rgb(13, 73, 240);
+  transform: scale(1.05);
 }
 
 #filler {
@@ -246,7 +277,7 @@ form button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 65vw;
+  width: 70vw;
   padding: 10px;
   border: 1px solid black;
   border-top: 0px;
@@ -256,7 +287,7 @@ form button {
 
 .match-details {
   width: 80vw;
-  height: 40vh;
+  height: 25vh;
   margin-top: 5vh;
   display: flex;
   justify-content: space-evenly;
@@ -272,7 +303,7 @@ form button {
   justify-content: flex-end;
   align-items: center;
   text-align: center;
-  flex-grow: 2;
+  flex-grow: 1;
 }
 
 .match-details .avatar img {
@@ -298,7 +329,7 @@ form button {
 }
 
 .match-details .scores span {
-  font-size: 4vh;
+  font-size: 3vh;
 }
 
 .match-details .result {
@@ -321,6 +352,32 @@ form button {
   height: 20vh;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.match-details + .weapons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  border-top: none;
+  width: 75vw;
+}
+.match-details + .weapons-container h3 {
+  margin: 2vh auto;
+}
+
+
+.match-details + .weapons-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 18vh;
+}
+
+.match-details + .weapons-container img {
+  height: 10vh;
+  width: 30vw;
 }
 
 .notes-container {
@@ -346,13 +403,6 @@ form button {
 .score-container {
   display: flex;
   justify-self: center;
-}
-
-.weapons-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .note {
