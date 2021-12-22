@@ -105,6 +105,8 @@ nav .avatar{
   height: 40px;
   width: 40px;
   margin: 10px;
+  margin-right: 25px;
+  cursor: pointer;
 }
 
 .login {
@@ -130,6 +132,24 @@ nav .avatar{
   z-index: 49;
   background-color: white;
 }
+
+.dropdown {
+  display: none;
+}
+
+
+.drop-down-active {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: rgb(34, 34, 36);
+  width: 100px;
+  transition: fall 2.0 forwards;
+};
 
 .intro {
   padding: 5vh 15vw; 
@@ -176,6 +196,11 @@ nav .avatar{
   justify-content: space-around;
   align-items: center;
   
+}
+
+.uh-oh {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .content-h1 {
