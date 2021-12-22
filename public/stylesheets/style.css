@@ -69,7 +69,7 @@ nav img:hover {
   -webkit-text-stroke: 0.1px  black;
 }
 
-.nav-item:hover{
+.nav-item:hover, .avatar a:hover {
   cursor: pointer;
   animation: buttonHover 0.5s forwards;
 }
