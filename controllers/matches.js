@@ -11,10 +11,12 @@ const Match = require('./../models/match');
 const User = require('./../models/user');
 
 const getCharInfo = require('../public/javascripts/getCharInfo');
+const getWeaponsInfo = require('../public/javascripts/getWeaponsInfo');
 
 function create(req, res){
     let userId = res.locals.user._id;
     req.body.character = getCharInfo(req.body.character)[0];
+    req.body.loadout = getWeaponsInfo(req.body.weapon1, req.body.weapon2);
     req.body.win = (!!req.body.win);
     req.body.user = userId;
     // Save the match
@@ -66,6 +68,7 @@ function show(req, res){
 
 async function update(req, res){
     req.body.character = getCharInfo(req.body.character)[0];
+    req.body.loadout = getWeaponsInfo(req.body.weapon1, req.body.weapon2);
     req.body.win = (!!req.body.win);
     const match = await Match.findOneAndUpdate({_id: req.params.id}, req.body, {
         new: true
