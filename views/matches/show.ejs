@@ -159,10 +159,10 @@
                         </select>
                     </div>
                 </label>
+                </div>
                 <div class="button-container">
                     <p class="close-btn">Close</p>
                     <button type="submit">Update</button>
-                </div>
                 </div>
             </form>
                     `
@@ -173,11 +173,15 @@
                     toggleModal();
                     modalEl.innerHTML = `
                     <h1 class="x-close">X</h1>
+                    <div class="confirmation">
                         <h1>Are you sure you want to delete this match?</h1>
                         <form action="/matches/<%=match._id%>?_method=DELETE" method="POST">
+                            <div>
                             <p class="close-btn">NO</p>
                             <button type="submit">YES</button>
+                            </div>
                         </form>
+                    </div>
                     `
                     helper();
                 });
@@ -186,6 +190,7 @@
                     modalEl.classList.toggle('hidden');
                     backdropEl.classList.toggle('hidden');
                     bodyEl.classList.toggle('scroll-disabled');
+                    window.scrollTo(0, 0);
                 }
                 
             function helper() {
