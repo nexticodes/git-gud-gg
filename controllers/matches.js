@@ -9,6 +9,7 @@ module.exports = {
 
 const Match = require('./../models/match');
 const User = require('./../models/user');
+const Note = require('./../models/note');
 
 const getCharInfo = require('../public/javascripts/getCharInfo');
 const getWeaponsInfo = require('../public/javascripts/getWeaponsInfo');
@@ -19,6 +20,7 @@ function create(req, res){
     req.body.loadout = getWeaponsInfo(req.body.weapon1, req.body.weapon2);
     req.body.win = (!!req.body.win);
     req.body.user = userId;
+    req.body.placement = (req.body.win) ? 1 : req.body.placement;
     // Save the match
     const match = new Match(req.body);
     match.save((err)=>{
@@ -69,6 +71,7 @@ async function update(req, res){
     req.body.character = getCharInfo(req.body.character)[0];
     req.body.loadout = getWeaponsInfo(req.body.weapon1, req.body.weapon2);
     req.body.win = (!!req.body.win);
+    req.body.placement = (req.body.win) ? 1 : req.body.placement;
     const match = await Match.findOneAndUpdate({_id: req.params.id}, req.body, {
         new: true
     });
@@ -90,6 +93,7 @@ async function update(req, res){
 
 async function removeOne(req, res) {
     const match = await Match.findOneAndDelete(req.params.id);
+    const notes = await Note.remove({matchId: req.params.id});
     const user = await User.findById(res.locals.user._id);
     user.totalKills -= match.kills;
     user.totalDeaths -= match.deaths;
