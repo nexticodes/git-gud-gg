@@ -12,8 +12,7 @@ const matchSchema = new Schema({
     placement: Number,
     win: Boolean,
     character: Object,
-    weapon1: String,
-    weapon2: String,
+    loadout: [Object],
     notes: [{
         type: Schema.Types.ObjectId,
         ref: 'Note'
