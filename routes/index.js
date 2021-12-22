@@ -5,6 +5,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  if (res.locals.user) return res.redirect('/matches');
   res.render('index', { title: 'Express' });
 });
 
