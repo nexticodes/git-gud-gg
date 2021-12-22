@@ -98,7 +98,7 @@ async function removeOne(req, res) {
     user.totalKills -= match.kills;
     user.totalDeaths -= match.deaths;
     user.kdr = (user.totalKills / user.totalDeaths).toFixed(2);
-    user.matches = user.matches.filter(m => !m._id.equals(req.params.id));
+    user.matches.pull({_id: match._id})
     user.numGames = user.matches.length;
     user.save((err) => {
         res.redirect('/matches');
