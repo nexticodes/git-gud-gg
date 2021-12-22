@@ -2,7 +2,8 @@
 
 <div class="content-container">
     <% if (matches.length == 0) {%>
-    <h1>It seems like you haven't recorded any matches.</h1>
+    <h1 class="uh-oh">It seems like you haven't recorded any matches.</h1>
+    <h3 class="uh-oh">Add one by clicking the button below!</h3>
     <% } else { %>
         <h1 class="content-h1">MATCHES</h1>
         <div class="list-options">
@@ -68,10 +69,6 @@
                 <% }) %>
             </div>
         </content>
-    <% } %>
-        <form action="/matches/new" method="GET">
-            <button class="add-sign" type="submit">+</button>
-        </form>
         <script>
             const userMatchesEl = document.querySelector('#user-matches');
             const allMatchesEl = document.querySelector('#all-matches');
@@ -88,6 +85,10 @@
             userMatchesBtn.addEventListener('click', toggleVis);
             allMatchesBtn.addEventListener('click', toggleVis);
         </script>
+    <% } %>
+        <form action="/matches/new" method="GET">
+            <button class="add-sign" type="submit">+</button>
+        </form>
 </div>
 
 <%- include('../partials/footer') %>
