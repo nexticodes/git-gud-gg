@@ -14,6 +14,10 @@ const noteSchema = new Schema({
     postedBy: {
         type: Schema.Types.ObjectId,
         ref: 'User'
+    },
+    matchId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Match'
     }
 }, {
     timestamps: true
