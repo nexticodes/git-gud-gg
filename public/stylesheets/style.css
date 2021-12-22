@@ -159,7 +159,7 @@ nav .avatar{
   right: 0;
   background-color: rgb(34, 34, 36);
   width: 100px;
-  transition: fall 2.0 forwards;
+  z-index: 50;
 };
 
 .intro {
@@ -180,10 +180,12 @@ nav .avatar{
   flex-direction: column;
   justify-content: space-around;
   height: 10vh;
+  text-align: center;
 }
 
 .intro-link { 
   margin-top: 3vh;
+  text-align: center;
 }
 
 .intro-link a {
@@ -267,6 +269,7 @@ form button {
   align-items: center;
   border: 1px solid black;
   border-right: 0;
+  padding-left: 15px;
 }
 
 .match-container .avatar {
@@ -377,7 +380,7 @@ form button {
   height: 20vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   text-align: center;
   flex-grow: 1;
@@ -537,6 +540,52 @@ form button {
 
 #add-note {
   width: 80%;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 85vw;
+}
+
+.profile-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-score .score-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-score .score-details div {
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+}
+
+.profile-favorites {
+  display: flex;
+  width: 80vw;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 50vh;
+}
+.profile-favorites div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#fave-weapon {
+  height: 100px;
+}
+
+#fave-char {
+  height: 100px;
+  width: 100px;
 }
 
 textarea[name="content"]{

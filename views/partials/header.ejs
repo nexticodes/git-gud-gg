@@ -23,7 +23,7 @@
                 <a class="nav-item <%= (title === 'NEW MATCH') ? 'active' : '' %>"href="/matches/new">NEW MATCH</a>
                 <img class="avatar" src="<%=user.avatar%>"></p>
                 <div class="dropdown">
-                    <a class="nav-item" href="users/<%=user._id%>">PROFILE</a>
+                    <a class="nav-item" href="/users/<%=user._id%>">PROFILE</a>
                     <a class="nav-item" href="/logout">LOGOUT</a>
                 </div>
             <% } else { %>

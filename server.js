@@ -10,6 +10,7 @@ var methodOverride = require('method-override');
 var indexRouter = require('./routes/index');
 var matchesRouter = require('./routes/matches');
 var notesRouter = require('./routes/notes');
+var usersRouter = require('./routes/users');
 
 var isLoggedIn = require('./config/auth.js');
 
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/', isLoggedIn, notesRouter);
+app.use('/users', isLoggedIn, usersRouter);
 app.use('/matches', isLoggedIn, matchesRouter);
 
 // catch 404 and forward to error handler
