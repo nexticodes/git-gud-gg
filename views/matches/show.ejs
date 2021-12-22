@@ -28,6 +28,15 @@
                 <p>Result</p>
             </div>
         </div>
+        <div class="weapons-container">
+            <h3>Loadout</h3>
+            <% match.loadout.forEach(w => { %>
+                <div>
+                    <img class="weapon-img" src="<%=w.path%>">
+                    <p><%=w.name%></p>
+                </div>
+                <% }) %>
+        </div>
         <div class="options-container">
             <% if (isOwnUser) {%>
                 <img class="icon" src="/images/assets/edit-icon.svg" id="update-match-button" type="click" alt="Update">
