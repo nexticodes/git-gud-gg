@@ -13,6 +13,7 @@ function newNote(req, res){
 async function create(req, res){
     const match = await Match.findById(req.params.id);
     req.body.postedBy = res.locals.user;
+    req.body.matchId = match._id;
     const newNote = new Note(req.body);
     newNote.save((err) => {
         match.notes.push(newNote);
