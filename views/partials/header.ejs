@@ -2,8 +2,12 @@
 <html>
     <head>
         <title>
-            GitGud - helping gamers imrpove by bringing awareness to their gameplay.
+            GitGud.gg
         </title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Press+Start+2P&display=swap');
+            </style>
+        <link rel="icon" href="/images/assets/gg.svg">
         <link rel='stylesheet' href='/stylesheets/style.css' />
     </head>
 
@@ -18,9 +22,7 @@
                  <a class="nav-item <%= (title === 'ALL MATCHES') ? 'active' : '' %>" href="/matches">ALL MATCHES</a>
                 <a class="nav-item <%= (title === 'NEW MATCH') ? 'active' : '' %>"href="/matches/new">NEW MATCH</a>
 
-                <div class="nav-item">
-                    <img class="avatar" src="<%=user.avatar%>">
-                </div>
+                <img class="avatar" src="<%=user.avatar%>">
             <% } else { %>
                 <div class="nav-item">
                     <a href="/auth/google">LOG IN</a>
