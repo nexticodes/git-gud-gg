@@ -547,6 +547,20 @@ form button {
   align-items: center;
   justify-content: space-evenly;
   width: 85vw;
+  margin-top: 5vh;
+}
+
+.profile-avatar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  align-items: center;
+  height: 20vh;
+}
+
+.profile-avatar div {
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-score {
@@ -555,23 +569,37 @@ form button {
   align-items: center;
 }
 
+.profile-score > h2 {
+  margin-bottom: 6px;
+  border: 1px solid black;
+  text-align: center;
+  width: 50vw;
+}
+
 .profile-score .score-details {
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  width: 50vw;
+  padding: 5px;
 }
 
 .profile-score .score-details div {
   display: flex;
   justify-content: space-between;
   width: 40vw;
+  margin: 0 auto;
 }
 
 .profile-favorites {
+  margin-top: 20px;
   display: flex;
-  width: 80vw;
+  border: 1px solid black;
+  padding: 30px;
+  width: 78vw;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 50vh;
+  height: 55vh;
 }
 .profile-favorites div {
   display: flex;
