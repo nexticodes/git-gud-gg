@@ -4,9 +4,12 @@
         <div class="profile-container">
             <div class="profile-avatar">
                 <img class="avatar" src="<%=user.avatar%>">
-                <h3><%=user.name.split(' ')[0]%></h3>
-                <h6>Joined <%= new Date(user.createdAt).toLocaleDateString()%></h6>
-            </div>
+                <div>
+
+                    <h3><%=user.name.split(' ')[0]%></h3>
+                    <h6>Joined <%= new Date(user.createdAt).toLocaleDateString()%></h6>
+                </div>
+                </div>
             <div class="profile-score">
                 <h2>PLAYER STATS</h2>
                 <div class="score-details">
