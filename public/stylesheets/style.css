@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
   overflow: scroll;
   overflow-x: hidden;
-  background-color: gray;
+  background-color: rgb(176, 176, 176);
   font-family: 'Electrolize', sans-serif;
 }
 
@@ -50,7 +50,7 @@ nav img:hover {
 
   100%{
     -webkit-filter: drop-shadow( 0px 0px 5px rgba(201, 201, 201));
-    filter: drop-shadow( 0px 0px 5px rgb(0, 50, 249));
+    filter: drop-shadow( 0px 0px 5px #00B7FF);
     transform: scale(1.10);
   }
 }
@@ -74,7 +74,7 @@ nav img:hover {
   100%{
     text-shadow: 
     0px 0px 4px whitesmoke,
-    0px 0px 8px rgb(13, 73, 240);
+    0px 0px 8px #00B7FF;
     transform: scale(1.10);
 
   }
@@ -84,7 +84,7 @@ nav img:hover {
   text-shadow: 
   0px 0px 1px black,
   0px 0px 4px whitesmoke,
-  0px 0px 8px rgb(13, 73, 240);
+  0px 0px 8px #00B7FF;
   transform: scale(1.10);
 }
 
@@ -95,7 +95,7 @@ nav img:hover {
   box-shadow: 
   0px 0px 1px black,
   0px 0px 4px whitesmoke,
-  0px 0px 8px rgb(13, 73, 240);
+  0px 0px 8px #00B7FF;
   transform: scale(1.05);
 }
 
@@ -133,7 +133,15 @@ nav .avatar{
   border: 3px solid black;
   width: 85vw;
   z-index: 49;
-  background-color: white;
+  box-shadow: 
+  0px 0px 7px black inset;
+  background-color: rgb(67, 67, 67)
+}
+
+.content-container > h1, .content-h1{
+  color: white;
+  text-shadow: 0px 1px 0px black,
+  1px 2px 0px #00B7FF
 }
 
 .dropdown {
@@ -153,15 +161,6 @@ nav .avatar{
   width: 100px;
   z-index: 50;
 };
-
-.intro {
-  padding: 5vh 15vw; 
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
 
 .intro-title {
   padding-bottom: 30px;
@@ -214,11 +213,13 @@ nav .avatar{
 
 .content-header {
   text-align: center;
+  color: white;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 form h3 {
@@ -263,6 +264,7 @@ form button {
   border-right: 0;
   padding-left: 15px;
   box-shadow: 0px 2px 2px gray;
+  background-color: whitesmoke;
 }
 
 .match-container .avatar {
@@ -300,7 +302,7 @@ form button {
 }
 
 .match-container .scores span {
-  font-size: 3vh;
+  font-size: 36px;
 }
 
 
@@ -316,7 +318,7 @@ form button {
 }
 
 .match-container .result h1 {
-  font-size: 8vh;
+  font-size: 80px;
 }
 
 .match-container .details-button-container {
@@ -357,13 +359,22 @@ form button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 70vw;
+  width: 50vw;
+  height: 15vh;
   padding: 10px;
-  border: 1px solid black;
+  border: 2px solid black;
   border-top: 0px;
   margin-bottom: 20px;
   border-radius: 0px 0px 10px 10px;
-  background-color: gray;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 2px 4px gray;
+}
+
+.options-container img {
+  border: none;
+  -webkit-filter: drop-shadow( 0px 0px 1px white);
+  filter: drop-shadow( 0px 0px 1px white);
 }
 
 .match-details {
@@ -374,6 +385,12 @@ form button {
   justify-content: space-evenly;
   align-items: center;
   border: 1px solid black;
+  background-color: white;
+  box-shadow:
+  0px -4px 2px #00B7FF inset,
+  0px 0px 2px white,
+  0px 0px 5px black,
+  0px 2px 6px black;
 }
 
 .match-details .avatar {
@@ -392,6 +409,7 @@ form button {
   width: 15vw;
   display: flex;
   flex-direction: column;
+  
 }
 
 .match-details .scores {
@@ -410,7 +428,7 @@ form button {
 }
 
 .match-details .scores span {
-  font-size: 3vh;
+  font-size: 36px;
 }
 
 .match-details .result {
@@ -424,7 +442,7 @@ form button {
 }
 
 .match-details .result h1 {
-  font-size: 12vh;
+  font-size: 80px;
 }
 
 .match-details .weapons {
@@ -433,6 +451,7 @@ form button {
   height: 20vh;
   justify-content: space-evenly;
   align-items: center;
+ 
 }
 
 .match-details + .weapons-container {
@@ -440,9 +459,15 @@ form button {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
+  border: 3px solid black;
   border-top: none;
-  width: 75vw;
+  width: 70vw;
+  background-color: rgb(85, 85, 85);
+  color: white;
+  box-shadow:
+  0px 0px 3px black,
+  0px 2px 4px black,
+  0px 3px 5px white;  
 }
 .match-details + .weapons-container h3 {
   margin: 2vh auto;
@@ -459,12 +484,20 @@ form button {
 .match-details + .weapons-container img {
   height: 10vh;
   width: 30vw;
+  background: white;
+  box-shadow:
+  0px -4px 2px #00B7FF inset,
+  0px 0px 2px white,
+  0px 0px 5px black,
+  0px 2px 6px black;
+  margin-bottom: 5px;
 }
 
 .notes-container {
   align-items: center;
   text-align: center;
-  width: 90%;
+  width: 85vw;
+  color: white;
 }
 
 .add-sign {
@@ -499,6 +532,7 @@ form button {
   border-bottom: 0;
   width: 70vw;
   height: 50px;
+  background-color: black;
 }
 
 .note-options {
@@ -518,25 +552,34 @@ form button {
   width: 75vw;
   margin: 0 auto;
   border: 1px solid black;
-  padding: 5%;
+  padding: 2vh 2vw;
+  background-color: white;
+  box-shadow: 0px 0px 30px black inset;
+  color: black;
 }
 
 .note-poster {
   border: 1px solid black;
   border-top: 0px;
-  width: 70vw;
+  width: 50vw;
   margin: 0 auto;
   border-radius: 0px 0px 25px 25px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 2px 4px gray;
 }
 
 .note-avatar {
   border-radius: 50%;
   height: 75px;
   margin: 10px;
-  border: 1px solid black;
+  border: none;
+  box-shadow: 0px 0px 2px white,
+  0px 0px 5px white,
+  0px 1px 4px #00B7FF
 }
 
 #add-note {
@@ -557,6 +600,8 @@ form button {
   border: 1px solid black;
   align-items: center;
   height: 20vh;
+  background-color: black;
+  color: white;
 }
 
 .profile-avatar div {
@@ -575,6 +620,8 @@ form button {
   border: 1px solid black;
   text-align: center;
   width: 50vw;
+  background-color: black;
+  color: white;
 }
 
 .profile-score .score-details {
@@ -583,6 +630,8 @@ form button {
   border: 1px solid black;
   width: 50vw;
   padding: 5px;
+  background-color: black;
+  color: white;
 }
 
 .profile-score .score-details div {
@@ -602,6 +651,8 @@ form button {
   flex-direction: column;
   justify-content: space-evenly;
   height: 55vh;
+  background-color: black;
+  color: white;
 }
 .profile-favorites div {
   display: flex;
@@ -609,19 +660,34 @@ form button {
   flex-direction: column;
 }
 
-#fave-weapon {
-  height: 100px;
+.profile-favorites, .profile-avatar, .profile-score > h2, .profile-score .score-details {
+  box-shadow: 
+  0px 1px 0px black,
+  0px 2px 0px white,
+  0px 3px 1px #00B7FF,
+  0px 4px 0px gray;
 }
 
 #fave-char {
-  height: 100px;
   width: 100px;
+}
+
+#fave-weapon, #fave-char {
+  height: 100px;
+  background: white;
+  box-shadow:
+  0px -4px 2px #00B7FF inset,
+  0px 0px 2px white,
+  0px 0px 5px black,
+  0px 2px 6px black;
+  margin: 10px auto;
 }
 
 textarea[name="content"]{
   width: 90%;
   height: 150px;
   margin: 20px auto;
+  padding: 20px;
 }
 
 
@@ -667,10 +733,13 @@ footer {
   z-index: 51;
   text-align: center;
   padding-bottom: 5vh;
+  background-color: black;
+  color: white;
 }
 
 .modal h1 {
   margin: 5vh 0;
+  
 }
 
 .hidden {
@@ -678,12 +747,13 @@ footer {
 }
 
 #update-match {
-  border: 1px solid black;
+  border: 1px solid white;
   height: 70%;
   width: 80%;
   display: flex;
   flex-direction: column;
   padding-top: 4%;
+  
 }
 
 #update-match .score-container {
@@ -696,9 +766,13 @@ footer {
 }
 
 #update-match .weapons-container {
-  height: 40%;
+  height: 20vh;
+  width: 40vw;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 #update-match .button-container { 
@@ -723,20 +797,35 @@ footer {
 
 button {
   cursor: pointer;
-  box-shadow: 0px 3px 2px black;
+  box-shadow: 
+  0px 3px 0px gray,
+  0px 5px 1px black
 }
 
 button:hover {
   animation: flash 0.5s forwards;
 }
 
+@keyframes flash {
+  100% {
+    color:white;
+    background-color: #00B7FF
+  }
+}
+
 button:active {
-  box-shadow: 0px 0px 0px;
-  transform: translateY(2px);
+  color: white;
+  box-shadow: 
+  0px 0px 2px white,
+  0px 0px 5px white,
+  0px 1px 4px #00B7FF;
+  transform: translateY(3px);
 }
 
 button:disabled {
-  box-shadow: 0px 0px 0px;
+  box-shadow: 
+  0px 3px 0px gray,
+  0px 5px 1px black
 }
 
 .icon {
@@ -746,8 +835,7 @@ button:disabled {
 }
 
 .icon:hover {
-  -webkit-filter: drop-shadow( 0px 0px 2px rgba(0, 0, 0, .7));
-  filter: drop-shadow( 0px 0px 2px rgba(0, 0, 0, .7));
+  transform: scale(1.05);
 }
 
 .confirmation {
@@ -768,4 +856,14 @@ button:disabled {
 
 .confirmation div button {
   margin: 0;
+}
+
+input {
+  padding: 2px;
+}
+
+
+
+.intro {
+  background-color: white;
 }
