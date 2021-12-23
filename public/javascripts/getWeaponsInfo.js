@@ -98,5 +98,11 @@ module.exports = (weapon1, weapon2) => {
             result[1] = w
         };
     })
+    if (result.includes(null)){
+        result[result.indexOf(null)] = {
+            name: 'Mozambique',
+            path: '/images/weapon-icons/Mozambique.svg'
+        }
+    };
     return result;
 }
