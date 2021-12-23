@@ -3,27 +3,27 @@
 ## Overview
 -----------
 
-This project is a browser-based tracking application that allows Users to post and keep track of their match history for a game they want to improve on – in this case, it’s for the game called Apex Legends. This simple CRUD Note-taking app utilizes Node.js (Express) and MongoDB as well as HTML/CSS/JS.
+This project is a browser-based Note taking tracking application that allows Users to post and keep track of their match history for a game they want to improve on – in this case, it’s for the game called Apex Legends. This simple CRUD Note-taking app utilizes Node.js (Express) and MongoDB as well as HTML/CSS/JS.
 
 
 [Click here to access the site!](https://git-gud-gg.herokuapp.com/)
 
-## Wireframes
+## Screenshots
 ---
-|Splash                     |  Login                   | 
+|Splash / Login                    |  Match Index                   | 
 |:------------------------:|:-------------:             |
-![splash page](public/images/assets/screenshots/wireframes/splash.png)  |  ![match-index](public/images/assets/screenshots/wireframes/login-page.png) |
+![splash page](public/images/assets/screenshots/login.png)  |  ![match-index](public/images/assets/screenshots/all-matches.png) |
 
 ---
-| Match Listing / Index |  Match Detail  |  New Match Form Page   |
-|:--------:|:-----------:|:----------:|
-|![homepage](public/images/assets/screenshots/wireframes/match-index.png) | ![homepage](public/images/assets/screenshots/wireframes/match-detail.png)  |  ![rules](public/images/assets/screenshots/wireframes/match-new-form.png)
+| Match Detail 1 |  Match Detail  | 
+|:--------:|:-----------:|
+|![Match Details](public/images/assets/screenshots/my-match-details.png) | ![Match Details 2](public/images/assets/screenshots/match-details-2.png)  |
 
 ---
 
-|  Add Note Form  |  User Profile   |
+|  Add New Match Form  |  User Profile   |
 |:------------------------:|:-------------:|
-![homepage](public/images/assets/screenshots/wireframes/add-notes.png)  |  ![rules](public/images/assets/screenshots/wireframes/user-profile.png)
+![Add Match](public/images/assets/screenshots/new-matches.png)  |  ![User Profile](public/images/assets/screenshots/user-profile.png)
 
 
 
