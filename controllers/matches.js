@@ -92,7 +92,7 @@ async function update(req, res){
 }
 
 async function removeOne(req, res) {
-    const match = await Match.findOneAndDelete(req.params.id);
+    const match = await Match.findByIdAndDelete(req.params.id);
     const notes = await Note.remove({matchId: req.params.id});
     const user = await User.findById(res.locals.user._id);
     user.totalKills -= match.kills;
