@@ -47,15 +47,11 @@ nav img:hover {
 }
 
 @keyframes icon-hover {
-  75%{
-    -webkit-filter: drop-shadow( 0px 0px 5px rgba(255, 255, 255));
-    filter: drop-shadow( 0px 0px 5px rgb(0, 50, 249));
-    transform: scale(1.1);
-  }
+
   100%{
     -webkit-filter: drop-shadow( 0px 0px 5px rgba(201, 201, 201));
     filter: drop-shadow( 0px 0px 5px rgb(0, 50, 249));
-    transform: scale(1.05);
+    transform: scale(1.10);
   }
 }
 
@@ -75,15 +71,11 @@ nav img:hover {
 }
 
 @keyframes buttonHover {
-  70%{
-    text-shadow: rgb(13, 73, 240);
-    transform: scale(1.1);
-  }
   100%{
     text-shadow: 
     0px 0px 4px whitesmoke,
     0px 0px 8px rgb(13, 73, 240);
-    transform: scale(1.05);
+    transform: scale(1.10);
 
   }
 }
@@ -93,7 +85,7 @@ nav img:hover {
   0px 0px 1px black,
   0px 0px 4px whitesmoke,
   0px 0px 8px rgb(13, 73, 240);
-  transform: scale(1.05);
+  transform: scale(1.10);
 }
 
 .avatar-active {
@@ -138,8 +130,8 @@ nav .avatar{
   align-items: center;
   margin: 2vh auto;
   padding: 5vh 1vw;
-  border: 1px solid black;
-  width: 90vw;
+  border: 3px solid black;
+  width: 85vw;
   z-index: 49;
   background-color: white;
 }
@@ -270,6 +262,7 @@ form button {
   border: 1px solid black;
   border-right: 0;
   padding-left: 15px;
+  box-shadow: 0px 2px 2px gray;
 }
 
 .match-container .avatar {
@@ -346,6 +339,13 @@ form button {
   cursor: pointer;
 }
 
+.details-button:hover {
+  transform: scale(1.025);
+}
+
+.details-button:active {
+  transform: scale(1.0125);
+}
 
 
 .user-link {
@@ -363,6 +363,7 @@ form button {
   border-top: 0px;
   margin-bottom: 20px;
   border-radius: 0px 0px 10px 10px;
+  background-color: gray;
 }
 
 .match-details {
@@ -587,6 +588,7 @@ form button {
 .profile-score .score-details div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 40vw;
   margin: 0 auto;
 }
@@ -721,6 +723,20 @@ footer {
 
 button {
   cursor: pointer;
+  box-shadow: 0px 3px 2px black;
+}
+
+button:hover {
+  animation: flash 0.5s forwards;
+}
+
+button:active {
+  box-shadow: 0px 0px 0px;
+  transform: translateY(2px);
+}
+
+button:disabled {
+  box-shadow: 0px 0px 0px;
 }
 
 .icon {
